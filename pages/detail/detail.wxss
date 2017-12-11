@@ -27,6 +27,7 @@
 }
 .my-scroll{
   height:100%;
+  width:100%;
 }
 .swiper-view{
   height:52%;
