@@ -1,0 +1,142 @@
+<!--index.wxml-->
+<view class="container mycontainer">
+  <scroll-view scroll-y="true" class="my-scroll">
+    <view class="room-view" bindtap="to_detail">
+      <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
+        <swiper-item class="my-swiper-item">
+            <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+        </swiper-item>
+        <swiper-item class="my-swiper-item">
+            <image src="https://mina.mapglory.com/static/images/girl1_2.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+        </swiper-item>
+      </swiper>
+      <view class="info-view">
+        <view class="text-view">
+          <view class="name-view">
+            <text class="name-text">Hilight·光与尘的美术空间</text>
+          </view>
+          <view class="label-view">
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+          </view>
+        </view>
+        <view class="price-view">
+          <view class="price-num-view">
+            <view class="num-view">￥520</view>
+            <view class="per-hour-view">/时起</view>
+          </view>
+          <view class="notice-view">
+           <text>上新特惠</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="room-view">
+      <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
+        <swiper-item class="my-swiper-item">
+            <image src="https://mina.mapglory.com/static/images/girl1_2.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+        </swiper-item>
+      </swiper>
+      <view class="info-view">
+        <view class="text-view">
+          <view class="name-view">
+            <text class="name-text">Hilight·光与尘的美术空间</text>
+          </view>
+          <view class="label-view">
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+          </view>
+        </view>
+        <view class="price-view">
+          <view class="price-num-view">
+            <view class="num-view">￥520</view>
+            <view class="per-hour-view">/时起</view>
+          </view>
+          <view class="notice-view">
+           <text>上新特惠</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="room-view">
+      <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
+        <swiper-item class="my-swiper-item">
+            <image src="https://mina.mapglory.com/static/images/girl2_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl2_2.jpeg" />
+        </swiper-item>
+      </swiper>
+      <view class="info-view">
+        <view class="text-view">
+          <view class="name-view">
+            <text class="name-text">Hilight·光与尘的美术空间</text>
+          </view>
+          <view class="label-view">
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+          </view>
+        </view>
+        <view class="price-view">
+          <view class="price-num-view">
+            <view class="num-view">￥520</view>
+            <view class="per-hour-view">/时起</view>
+          </view>
+          <view class="notice-view">
+           <text>上新特惠</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="room-view">
+      <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
+        <swiper-item class="my-swiper-item">
+            <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_2.jpeg" />
+        </swiper-item>
+      </swiper>
+      <view class="info-view">
+        <view class="text-view">
+          <view class="name-view">
+            <text class="name-text">Hilight·光与尘的美术空间</text>
+          </view>
+          <view class="label-view">
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+            <view class="label">
+              <text class="label-text">长乐路</text>
+            </view>
+          </view>
+        </view>
+        <view class="price-view">
+          <view class="price-num-view">
+            <view class="num-view">￥520</view>
+            <view class="per-hour-view">/时起</view>
+          </view>
+          <view class="notice-view">
+           <text>上新特惠</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="foot-view"></view>
+  </scroll-view>
+  <view class="bottom-bar">
+    <view class="xun-view">
+      <text>询</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,314 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.mycontainer{
+  padding:0 0;
+  background-color: #ffffff;
+  height:1300rpx;
+}
+.my-scroll{
+  height:100%;
+}
+.swiper-view{
+  height:52%;
+  margin-bottom:70rpx;
+}
+.myswiper{
+  height:88%;
+  width:100%;
+}
+.jianbian{
+  height:228rpx;
+  width:100%;
+
+  position:absolute;
+  top:368rpx;
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(rgba(255,255,255,0)), to(rgba(255, 255, 255, 1)));  
+}
+.room-image{
+  width: 100%; 
+  height: 100%;
+  margin-bottom: 0;
+  padding-bottom:0; 
+}
+.info-view{
+  display:flex;
+  height:22%;
+  width:100%;
+  padding-left:30rpx;
+  position:absolute;
+  top:40%;
+}
+.text-info-view{
+  height:100%;
+  width:65%;
+}
+.price-info-view{
+  width:35%;
+  height:100%;
+  padding-top:20rpx;
+}
+.title-view{
+  padding-top:15rpx;
+}
+.black-title{
+  font-size:33px;
+  font-weight:500;
+}
+.black-name{
+  font-weight:300;
+  color:#767676;
+  font-size:18px;
+}
+
+.label-view{
+  height:70%;
+  width:100%;
+  display:flex;
+  padding-top:10rpx;
+}
+.label{
+  padding:5rpx 0rpx;
+  margin-right:5%;
+  border-style: solid; 
+  border-width: 1px;
+  border-color: #9f9999;
+  border-radius: 15%;
+  height:30rpx;
+  display: flex;
+  justify-content: center;
+}
+.label-text{
+  font-weight:300;
+  color:#707070;
+  font-size:25rpx;
+}
+
+.price-num-view{
+  height:24%;
+  padding-top:15rpx;
+  background-color: #93774f;
+  color:white;
+  display: flex;
+  justify-content: center;
+  border-style: solid; 
+  border-width: 1px;
+  border-radius: 10%;
+  border-color: #93774f
+}
+
+.num-view{
+  width:55%;
+  font-weight:400;
+  font-size:45rpx;
+}
+.per-hour-view{
+  padding-top:20rpx;
+  width:45%;
+  font-weight:300;
+  font-size:20rpx;
+}
+.old-price-view{
+  margin-left:40rpx;
+}
+.old-text{
+  font-weight:300;
+  color:#707070;
+  font-size:30rpx;
+  text-decoration: line-through;
+}
+
+.about-view{
+  padding-left:30rpx;
+  padding-right:30rpx;
+  margin-top:0rpx;
+}
+.about-detail-view{
+  margin-top:20rpx;
+}
+.large-title{
+  color:#000000;
+  font-size:28px;
+  font-weight:500;
+}
+.detail-text{
+  font-weight:300;
+  font-size:30rpx;
+}
+.label-icon-view{
+  height:160rpx;
+  width:100%;
+  margin-top:30rpx;
+  margin-left:30rpx;
+  margin-right:40rpx;
+  display:flex;
+}
+.label-icon{
+  width:16%;
+  height:100%;
+  padding-left:10rpx;
+  padding-right:10rpx;
+}
+.label-icon-image{
+  height:50%;
+  width:100%;
+}
+.icon-image{
+  height:110rpx;
+  width:110rpx;
+}
+.label-icon-text{
+  height:30%;
+  width:100%;
+}
+.icon-text{
+  font-weight:300;
+  color:#707070;
+  font-size:25rpx;
+}
+
+.address-view{
+  padding-left:30rpx;
+  padding-right:30rpx;
+  margin-top:40rpx;
+}
+.address-detail-view{
+  margin-top:20rpx;
+}
+.map-view{
+  margin-top:40rpx;
+  height:500rpx;
+  display:flex;
+}
+.mymap{
+  height:500rpx;
+  width:500rpx;
+}
+
+.image-record-view{
+  padding-left:30rpx;
+  padding-right:30rpx;
+  margin-top:60rpx;
+}
+.image-record-detail-view{
+  margin-top:20rpx;
+  height:500rpx;
+}
+.record-image{
+  width:100%;
+}
+.myitem{
+  width:300rpx;
+}
+
+.room-equip-view{
+  padding-left:30rpx;
+  padding-right:30rpx;
+  margin-top:40rpx;
+}
+.room-equip-detail-view{
+  margin-top:20rpx;
+  width:100%;
+  padding-bottom:30rpx;
+  border-bottom:1rpx solid #9f9999;
+}
+
+.medium-title-view{
+  display:flex;
+  width:100%;
+  margin-top:40rpx;
+}
+.title-icon-view{
+  width:10%;
+  padding-left:15rpx;
+}
+.equip-title-icon{
+  height:55rpx;
+  width:55rpx;
+}
+.medium-black-text{
+  font-size:22px;
+  font-weight:500;
+}
+.room-equip-icon-view{
+  width:100%;
+  padding-left:20rpx;
+  padding-right:20rpx;
+  margin-top:40rpx;
+  display:flex;
+  flex-flow: row wrap;
+}
+.room-equip-icon{
+  width:27%;
+  display:flex;
+  padding-right:35rpx;
+  float:left;
+  margin-bottom:30rpx;
+}
+.room-equip-icon-img{
+  width:30%;
+}
+.room-equip-icon-text{
+  width:70%;
+}
+.equip-icon{
+  height:50rpx;
+  width:50rpx;
+}
+
+
+.bottom-bar{
+  position:fixed;
+  top:81%;
+  left:84%;
+  width:55px;
+  height:50px;
+  display:flex;
+  background-color:#b69a72;
+  border-radius: 100%;
+  justify-content: center;
+  color:white;
+  font-size:33px;
+  font-weight:300;
+  padding-top:18rpx;
+}
+.bottom-bar-go{
+  position:fixed;
+  top:92%;
+  width:100%;
+  height:8%;
+  display:flex;
+}
+.view-btn-2{
+  width:100%;
+  height:100%;
+  background-color: #917651;
+}
+.yueta{
+  width:100%;
+  height:100%;
+  background-color: #917651;
+  color:#ffffff;
+}
+.foot-view{
+  height:150rpx;
+}
