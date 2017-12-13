@@ -1,5 +1,5 @@
 
-//logs.js
+//index.js
 var app = getApp()
 Page({
   data: {

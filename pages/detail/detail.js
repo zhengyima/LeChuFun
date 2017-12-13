@@ -1,5 +1,5 @@
 
-//logs.js
+//details.js
 var app = getApp()
 Page({
   data: {
@@ -51,7 +51,11 @@ Page({
       url: "../detail/detail"
     })
   },
-
+  order_func:function(){
+    wx.navigateTo({
+      url: "../Order/Order"
+    })
+  },
   regionchange(e) {
     console.log(e.type)
   },
@@ -60,5 +64,5 @@ Page({
   },
   controltap(e) {
     console.log(e.controlId)
-  }
+  },
 })

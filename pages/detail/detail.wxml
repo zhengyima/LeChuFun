@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<!--detail.wxml-->
 <view class="container mycontainer">
   <view class="my-scroll">
     <view class="swiper-view">
@@ -260,7 +260,7 @@
   </view>
   <view class="bottom-bar-go">
     <view class="view-btn-2">
-      <button class="yueta" data-sno="{{list.sno}}" bindtap="yue_ta_func">立即约TA</button>
+      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">立即约TA</button>
     </view>
   </view>
 </view>
