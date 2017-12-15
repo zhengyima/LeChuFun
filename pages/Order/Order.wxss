@@ -43,9 +43,9 @@
   font-size:40rpx;
   height:13%;
   position:absolute;
-  opacity: 0.98;
+  opacity: 0.5;
   width:100%;
-  top:28%;
+  top:24%;
 }
 .info-view{
   padding-left:40rpx;
@@ -129,4 +129,64 @@
 .tip{
   font-weight:300;
   font-size:22rpx;
+}
+
+.busy-time-view{
+  margin-top:20rpx;
+  width:100%;
+  display:flex;
+}
+.busy-title{
+  font-weight:400;
+  font-size:30rpx;
+  margin-left:30rpx;
+  padding-top:5rpx;
+}
+.busy-time-detail{
+  display:flex;
+  padding-left:25rpx;
+}
+.busy-time{
+  margin-top:20rpx;
+  margin-left:30rpx;
+}
+.busy-time-text{
+  color:#fc9885;
+  font-size:40rpx;
+  font-weight:400;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.holder{
+  color:#c5c5c5;
+  font-size:30rpx;
+}
+.help-title{
+  font-size:22rpx;
+  color:#c2b9ad;
+  padding:0rpx 25rpx;
+}
+.myradio-label{
+  margin-left:25rpx;
+  font-size:25rpx;
+}
+.wx-radio-input{
+  width:20px !important; 
+  height:20px !important;
+  background-color: #fd7e37;
+  color:#fd7e37;
+}
+.radio-view{
+  margin-bottom:10rpx;
+}
+.input-view{
+  width:94%;
+  margin-left:3%;
+  margin-right:3%;
+  margin-top:15rpx;
+  border: 1rpx solid #9f9999;
+}
+.need-input{
+  padding-left:3%;
+  padding-right:3%;
+  font-size:20rpx;
 }

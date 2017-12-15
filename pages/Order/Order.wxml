@@ -1,6 +1,6 @@
 <!--detail.wxml-->
 <view class="container mycontainer">
-  <view class="my-scroll">
+  <scroll-view scroll-y="true" class="my-scroll">
     <view class="room-img-view">
       <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
       <view class="info-view">
@@ -22,7 +22,7 @@
               <image src="../../images/icon2.png" class="picker-icon" ></image>
             </view>
             <view class="picker">
-              当前选择: {{date}}
+              <text class="holder">{{date_holder}}</text> {{date}}
             </view>
             <image src="../../images/picker_icon.png" class="picker-icon-tiny" ></image>
           </view>
@@ -39,7 +39,7 @@
                 <image src="../../images/icon2.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
-                当前选择: {{time1}}
+                <text class="holder">{{time_holder_start}}</text> {{time1}}
               </view>
               <image src="../../images/picker_icon.png" class="picker-icon-tiny" ></image>
             </view>
@@ -55,7 +55,7 @@
                 <image src="../../images/icon2.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
-                当前选择: {{time2}}
+                <text class="holder">{{time_holder_end}}</text> {{time2}}
               </view>
               <image src="../../images/picker_icon.png" class="picker-icon-tiny" ></image>
             </view>
@@ -66,5 +66,106 @@
     <view class="tip-view">
         <text class="tip">**周五下午五点前，起订时间为3小时，5点后起订时间为4小时</text>
     </view>
-  </view>
+    <view class="busy-time-view">
+       <view class="busy-title">已预订:</view>
+       <view class="busy-time-detail">
+          <text class="busy-time-text">8:00-10:00</text>
+       </view>
+    </view>
+    <view class="two-select-view" style="margin-top:50rpx;">
+      <view class="half-select-view">
+        <view class="time-title">活动类型*</view>
+        <view class="help-title">(为了给您提供更好的服务)</view>
+        <view class="time-select-half">
+          <picker mode="selector" value="{{type_index}}" range="{{types}}" bindchange="bindtypeChange" class="time-picker">
+            <view class="picker-inner-view">
+              <view class="left-img-view">
+                <image src="../../images/icon2.png" class="picker-icon" ></image>
+              </view>
+              <view class="half-picker">
+                 <text class="holder">{{type_holder}}</text>{{types[type_index]}}
+              </view>
+              <image src="../../images/picker_icon.png" class="picker-icon-tiny" ></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="half-select-view">
+        <view class="time-title">客人数量*</view>
+        <view class="help-title">(不同的人数价格可能会有所不同)</view>
+        <view class="time-select-half">
+          <picker mode="selector" value="{{num_index}}" range="{{nums}}" bindchange="bindnumChange" class="time-picker">
+            <view class="picker-inner-view">
+              <view class="left-img-view">
+                <image src="../../images/icon2.png" class="picker-icon" ></image>
+              </view>
+              <view class="half-picker">
+                <text class="holder">{{num_holder}}</text>{{nums[num_index]}}
+              </view>
+              <image src="../../images/picker_icon.png" class="picker-icon-tiny" ></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="two-select-view" style="margin-top:50rpx;">
+      <view class="half-select-view">
+        <view class="time-title">是否需要提前入场准备</view>
+        <view class="time-select-half" style="padding-top:10rpx;border-bottom: 1rpx solid #ffffff">
+          <radio-group class="radio-group" bindchange="radioChange">
+          <view class="radio-view"  wx:for="{{items}}">
+            <label class="myradio-label">
+              <radio value="{{item.name}}" checked="{{item.checked}}" class="myradio"/>{{item.value}}
+            </label>
+          </view>
+          </radio-group>
+        </view>
+      </view>
+      <view class="half-select-view">
+        <view class="time-title">是否需要游戏设备</view>
+        <view class="time-select-half" style="padding-top:10rpx;border-bottom: 1rpx solid #ffffff">
+          <radio-group class="radio-group" bindchange="equipChange">
+          <view class="radio-view" wx:for="{{equips}}">
+            <label class="myradio-label">
+              <radio value="{{item.name}}" checked="{{item.checked}}" class="myradio"/>{{item.value}}
+            </label>
+          </view>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+    <view class="two-select-view" style="margin-top:20rpx;">
+      <view class="half-select-view">
+        <view class="time-title">是否需要提前入场准备</view>
+        <view class="time-select-half" style="padding-top:10rpx;border-bottom: 1rpx solid #ffffff">
+          <radio-group class="radio-group" bindchange="radioChange">
+          <view class="radio-view"  wx:for="{{items}}">
+            <label class="myradio-label">
+              <radio value="{{item.name}}" checked="{{item.checked}}" class="myradio"/>{{item.value}}
+            </label>
+          </view>
+          </radio-group>
+        </view>
+      </view>
+      <view class="half-select-view">
+        <view class="time-title">是否需要游戏设备</view>
+        <view class="time-select-half" style="padding-top:10rpx;border-bottom: 1rpx solid #ffffff">
+          <radio-group class="radio-group" bindchange="equipChange">
+          <view class="radio-view" wx:for="{{equips}}">
+            <label class="myradio-label">
+              <radio value="{{item.name}}" checked="{{item.checked}}" class="myradio"/>{{item.value}}
+            </label>
+          </view>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+    <view class="need-view">
+      <view class="time-title">其他需求</view>
+      <view class="help-title">(若有其他需求可在这里说明，如更长时长，快递代收，上门看房，管家服务等。)</view>
+      <view class="input-view">
+        <input class="need-input" placeholder-class="holder" placeholder="请输入其他需求" type="text" value="{{need}}" bindinput="bindneed" ></input>
+      </view>
+    </view>
+  </scroll-view>
 </view>

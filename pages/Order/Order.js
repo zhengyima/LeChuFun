@@ -44,7 +44,24 @@ Page({
         height: 50
       },
       clickable: true
-    }]
+    }],
+    types:['聚会派对','团建年会'],
+    type_holder:'选择类型',
+    time_holder_start:'开始时间',
+    time_holder_end:'结束时间',
+    date_holder:'请选择日期',
+    nums:['11到20人','21到30人'],
+    num_holder:'请选择人数',
+    items: [
+      { name: '0', value: '不需要', checked: 'true' },
+      { name: '1', value: '提前1小时（免费）' },
+      { name: '2', value: '提前2小时' },
+      { name: '3', value: '提前3小时' },
+    ],
+    equips: [
+      { name: '0', value: '不需要', checked: 'true' },
+      { name: '1', value: 'XBOX(ONE)' },
+    ]
   },
   to_detail: function () {
     wx.navigateTo({
@@ -64,19 +81,47 @@ Page({
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      date: e.detail.value
+      date: e.detail.value,
+      date_holder:''
     })
   },
   bindTimeChange2: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      time2: e.detail.value
+      time2: e.detail.value,
+      time_holder_end: ''
     })
   },
   bindTimeChange1: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      time1: e.detail.value
+      time1: e.detail.value,
+      time_holder_start:''
     })
+  },
+  bindtypeChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      type_index: e.detail.value,
+      type_holder:''
+    })
+  },
+  bindnumChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      num_index: e.detail.value,
+      num_holder: ''
+    })
+  },
+  radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  }, 
+  equipChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
+  bindneed: function (e) {
+    this.setData({
+      need: e.detail.value
+    });
   },
 })
