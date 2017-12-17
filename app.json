@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/detail/detail",
     "pages/contact/contact",
-    "pages/Order/Order"
+    "pages/Order/Order",
+    "pages/term/term"
   ],
   "window": {
     "backgroundTextStyle": "bold",

@@ -1,5 +1,5 @@
 
-//contact.js
+//details.js
 var app = getApp()
 Page({
   data: {
@@ -45,13 +45,13 @@ Page({
       },
       clickable: true
     }],
-    types: ['聚会派对', '团建年会'],
-    type_holder: '选择类型',
-    time_holder_start: '开始时间',
-    time_holder_end: '结束时间',
-    date_holder: '请选择日期',
-    nums: ['11到20人', '21到30人'],
-    num_holder: '请选择人数',
+    types:['聚会派对','团建年会'],
+    type_holder:'选择类型',
+    time_holder_start:'开始时间',
+    time_holder_end:'结束时间',
+    date_holder:'请选择日期',
+    nums:['11到20人','21到30人'],
+    num_holder:'请选择人数',
     items: [
       { name: '0', value: '不需要', checked: 'true' },
       { name: '1', value: '提前1小时（免费）' },
@@ -82,7 +82,7 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value,
-      date_holder: ''
+      date_holder:''
     })
   },
   bindTimeChange2: function (e) {
@@ -96,14 +96,14 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       time1: e.detail.value,
-      time_holder_start: ''
+      time_holder_start:''
     })
   },
   bindtypeChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       type_index: e.detail.value,
-      type_holder: ''
+      type_holder:''
     })
   },
   bindnumChange: function (e) {
@@ -113,45 +113,53 @@ Page({
       num_holder: ''
     })
   },
-  radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
-  },
+  radioChange1: function (e) {
+    console.log('radio1发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      need1: e.detail.value
+    });
+  }, 
+  radioChange2: function (e) {
+    console.log('radio2发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      need2: e.detail.value
+    });
+  }, 
+  radioChange3: function (e) {
+    console.log('radio3发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      need3: e.detail.value
+    });
+  }, 
+  radioChange4: function (e) {
+    console.log('radio4发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      need4: e.detail.value
+    });
+  }, 
+  radioChange5: function (e) {
+    console.log('radio5发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      need5: e.detail.value
+    });
+  }, 
+  radioChange6: function (e) {
+    console.log('radio6发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      need6: e.detail.value
+    });
+  }, 
   equipChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
   },
-  bindname: function (e) {
+  bindneed: function (e) {
     this.setData({
-      name: e.detail.value
+      need: e.detail.value
     });
   },
-  bindphone: function (e) {
-    this.setData({
-      phone: e.detail.value
-    });
-  },
-  bindwechat: function (e) {
-    this.setData({
-      wechat: e.detail.value
-    });
-  },
-  bindfirm: function (e) {
-    this.setData({
-      firm: e.detail.value
-    });
-  },
-  binddep: function (e) {
-    this.setData({
-      dep: e.detail.value
-    });
-  },
-  bindcode: function (e) {
-    this.setData({
-      code: e.detail.value
-    });
-  },
-  order_func: function (e) {
+  order_func:function(e){
     wx.navigateTo({
-      url: "../term/term"
+      url: "../contact/contact"
     })
   }
 })

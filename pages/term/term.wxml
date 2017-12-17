@@ -1,0 +1,124 @@
+<!--detail.wxml-->
+<view class="container mycontainer">
+  <scroll-view scroll-y="true" class="my-scroll">
+    <view class="big-title">
+      <text class="big-title-text">空间使用条款*</text>
+    </view>
+    <view class="terms-view">
+      <view class="term-view">
+        <view class="radio-view">
+          <radio-group class="radio-group" bindchange="radioChange1">
+            <view class="radio-view">
+              <label class="myradio-label">
+                <radio value="1" class="myradio"/>
+              </label>
+            </view>
+          </radio-group>
+        </view>
+        <view class="detail-view">
+          <view class="detail-name">保持物况</view>
+          <view class="detail-text">需保持装修、家具及设备的整洁完好，如有污损或损失，需进行赔偿。</view>
+        </view>
+      </view>
+    </view>
+    <view class="terms-view">
+      <view class="term-view">
+        <view class="radio-view">
+          <radio-group class="radio-group" bindchange="radioChange2">
+            <view class="radio-view">
+              <label class="myradio-label">
+                <radio value="1" class="myradio"/>
+              </label>
+            </view>
+          </radio-group>
+        </view>
+        <view class="detail-view">
+          <view class="detail-name">控制噪音</view>
+          <view class="detail-text">北京时间12月17日19:30，意甲第17轮，维罗纳主场对阵AC米兰。上半场，卡利尼奇禁区前沿推射稍稍打偏，卡拉乔洛头球打破僵局，切尔奇伤退，半场过后，维罗纳1-0米兰。下半场，莫伊塞-基恩、贝萨破门，苏索染红，最终全场比赛结束，维罗纳3-0AC米兰。</view>
+        </view>
+      </view>
+    </view>
+    <view class="terms-view">
+      <view class="term-view">
+        <view class="radio-view">
+          <radio-group class="radio-group" bindchange="radioChange3">
+            <view class="radio-view">
+              <label class="myradio-label">
+                <radio value="1" class="myradio"/>
+              </label>
+            </view>
+          </radio-group>
+        </view>
+        <view class="detail-view">
+          <view class="detail-name">安全事项</view>
+          <view class="detail-text">在接受《泰山晚报》的采访时，谈到融入球队的问题，法比奥表示：“我在亚洲已经工作了一段时间了，在这边虽然只有不到一周的时间，但我感觉像是三个月一样，一切都是那么熟悉，在韩国的执教经历，让我更快更简单的融入到球队中。”</view>
+        </view>
+      </view>
+    </view>
+    <view class="terms-view">
+      <view class="term-view">
+        <view class="radio-view">
+          <radio-group class="radio-group" bindchange="radioChange4">
+            <view class="radio-view">
+              <label class="myradio-label">
+                <radio value="1" class="myradio"/>
+              </label>
+            </view>
+          </radio-group>
+        </view>
+        <view class="detail-view">
+          <view class="detail-name">进场离场</view>
+          <view class="detail-text">谈到对鲁能球员的初始印象，法比奥说道：“因为亚冠的关系，我和中国球员或多或少有过接触和了解，我已经提前做好了工作，如何跟球员处理好关系，知道他们在想什么。其实我和中国球员接触的时间算比较长的，我想把我自己有的东西，像老师学生一样传导，让球员把自己最大的能量发挥出来，这是我存在的目的。”</view>
+        </view>
+      </view>
+    </view>
+    <view class="big-title">
+      <text class="big-title-text">押金条款*</text>
+    </view>
+    <view class="terms-view">
+      <view class="term-view">
+        <view class="radio-view">
+          <radio-group class="radio-group" bindchange="radioChange5">
+            <view class="radio-view">
+              <label class="myradio-label">
+                <radio value="1" class="myradio"/>
+              </label>
+            </view>
+          </radio-group>
+        </view>
+        <view class="detail-view">
+          <view class="detail-name">押金交付</view>
+          <view class="detail-text">谈到对鲁能球员的初始印象，法比奥说道：“因为亚冠的关系，我和中国球员或多或少有过接触和了解，我已经提前做好了工作，如何跟球员处理好关系，知道他们在想什么。其实我和中国球员接触的时间算比较长的，我想把我自己有的东西，像老师学生一样传导，让球员把自己最大的能量发挥出来，这是我存在的目的。”</view>
+        </view>
+      </view>
+    </view>
+    <view class="terms-view">
+      <view class="term-view">
+        <view class="radio-view">
+          <radio-group class="radio-group" bindchange="radioChange6">
+            <view class="radio-view">
+              <label class="myradio-label">
+                <radio value="1" class="myradio"/>
+              </label>
+            </view>
+          </radio-group>
+        </view>
+        <view class="detail-view">
+          <view class="detail-name">押金退回</view>
+          <view class="detail-text">谈到对鲁能球员的初始印象，法比奥说道：“因为亚冠的关系，我和中国球员或多或少有过接触和了解，我已经提前做好了工作，如何跟球员处理好关系，知道他们在想什么。其实我和中国球员接触的时间算比较长的，我想把我自己有的东西，像老师学生一样传导，让球员把自己最大的能量发挥出来，这是我存在的目的。”</view>
+        </view>
+      </view>
+    </view>
+    <view class="foot-view"></view>
+  </scroll-view>
+  <view class="bottom-bar">
+    <view class="xun-view">
+      <text>询</text>
+    </view>
+  </view>
+  <view class="bottom-bar-go">
+    <view class="view-btn-2">
+      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">提交</button>
+    </view>
+  </view>
+</view>
