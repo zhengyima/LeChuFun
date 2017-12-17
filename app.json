@@ -3,12 +3,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/detail/detail",
+    "pages/contact/contact",
     "pages/Order/Order"
   ],
   "window": {
     "backgroundTextStyle": "bold",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "不如Meet空间列表",
+    "navigationBarTitleText": "玩处",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": "true"
   },

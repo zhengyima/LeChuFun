@@ -167,5 +167,16 @@
         <input class="need-input" placeholder-class="holder" placeholder="请输入其他需求" type="text" value="{{need}}" bindinput="bindneed" ></input>
       </view>
     </view>
+    <view class="foot-view"></view>
   </scroll-view>
+  <view class="bottom-bar">
+    <view class="xun-view">
+      <text>询</text>
+    </view>
+  </view>
+  <view class="bottom-bar-go">
+    <view class="view-btn-2">
+      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">提交</button>
+    </view>
+  </view>
 </view>

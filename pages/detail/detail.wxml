@@ -260,7 +260,7 @@
   </view>
   <view class="bottom-bar-go">
     <view class="view-btn-2">
-      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">立即约TA</button>
+      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">立即预约</button>
     </view>
   </view>
 </view>

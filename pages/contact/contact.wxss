@@ -1,4 +1,4 @@
-/**detail.wxss**/
+/**contact.wxss**/
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -46,10 +46,31 @@
   opacity: 0.5;
   width:100%;
   top:24%;
-  font-weight:500;
+  font-weight:400;
   padding-top:35rpx;
   padding-left:40rpx;
+  display:flex;
 }
+.info-name-view{
+  height:100%;
+  width:30%;
+}
+.info-date-view{
+  height:100%;
+  width:40%;
+  padding-right:5%;
+}
+.info-time-view{
+  height:100%;
+  width:30%;
+}
+.info-title{
+  font-size:30rpx
+}
+info-detail{
+  font-size:35rpx;
+}
+
 .addr-view{
   margin-top:15rpx;
 }
@@ -74,7 +95,55 @@
   margin-right:4%;
   padding-top:25rpx;
   padding-bottom:10rpx;
-  border-bottom: 5rpx solid #fd7e37
+  border-bottom: 1rpx solid #9f9999
+}
+
+.price-detail{
+  width:96%;
+  margin-left:2%;
+  padding-top:25rpx;
+  padding-bottom:10rpx;
+  border-bottom: 1rpx solid #9f9999
+}
+
+.price-detail-item{
+  width:100%;
+  display:flex;
+  font-weight:400;
+  font-size:25rpx;
+}
+
+.item-name{
+  padding-left:2%;
+  width:80%;
+}
+.item-price{
+  width:20%;
+}
+.total-view{
+  width:100%;
+  padding-left:4%;
+  display:flex;
+}
+.total-text{
+  font-weight:400;
+  font-size:30rpx;
+  width:73%;
+}
+.total-price{
+  font-weight:400;
+  font-size:30rpx;
+  width:27%;
+}
+.total-text-tiny{
+  font-weight:300;
+  font-size:27rpx;
+  width:71%;
+}
+.total-price-tiny{
+  font-weight:300;
+  font-size:27rpx;
+  width:29%;
 }
 .time-picker{
   display:flex;

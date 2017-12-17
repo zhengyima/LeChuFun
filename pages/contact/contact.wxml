@@ -1,0 +1,109 @@
+<!--contact.wxml-->
+<view class="container mycontainer">
+  <scroll-view scroll-y="true" class="my-scroll">
+    <view class="room-img-view">
+      <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+      <view class="info-view">
+        <view class="info-name-view">
+          <view class="info-title">预约空间</view>
+          <view class="info-detail">Hilight</view>
+        </view>
+        <view class="info-date-view">
+          <view class="info-title">预约日期</view>
+          <view class="info-title">2017年12月28日星期一</view>
+        </view>
+        <view class="info-time-view">
+          <view class="info-title">预约时间</view>
+          <view class="info-title">6:00AM 至 9:00AM</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="time-title" style="margin-top:40rpx;">您的联系信息</view>
+
+
+
+    <view class="time-select-view">
+      <view class="time-title">姓名:</view>
+      <view class="time-select">
+        <input class="need-input" placeholder-class="holder" placeholder="请输入您的联系姓名" type="text" value="{{name}}" bindinput="bindname" ></input>
+      </view>
+    </view>
+    <view class="two-select-view">
+      <view class="half-select-view">
+        <view class="time-title">联系电话:</view>
+        <view class="time-select-half">
+          <input class="need-input" placeholder-class="holder" placeholder="请输入您的联系电话" type="text" value="{{phone}}" bindinput="bindphone" ></input>
+        </view>
+      </view>
+      <view class="half-select-view">
+        <view class="time-title">联系微信号:</view>
+        <view class="time-select-half">
+          <input class="need-input" placeholder-class="holder" placeholder="请输入您的联系微信号" type="text" value="{{wechat}}" bindinput="bindwechat" ></input>
+        </view>
+      </view>
+    </view>
+    <view class="two-select-view">
+      <view class="half-select-view">
+        <view class="time-title">公司:</view>
+        <view class="time-select-half">
+          <input class="need-input" placeholder-class="holder" placeholder="请输入公司名" type="text" value="{{firm}}" bindinput="bindfirm" ></input>
+        </view>
+      </view>
+      <view class="half-select-view">
+        <view class="time-title">部门:</view>
+        <view class="time-select-half">
+          <input class="need-input" placeholder-class="holder" placeholder="请输入职务信息" type="text" value="{{dep}}" bindinput="binddep" ></input>
+        </view>
+      </view>
+    </view>
+    <view class="two-select-view">
+      <view class="half-select-view">
+        <view class="time-title">优惠码:</view>
+        <view class="time-select-half">
+          <input class="need-input" placeholder-class="holder" placeholder="请输入优惠码" type="text" value="{{code}}" bindinput="bindcode" ></input>
+        </view>
+      </view>
+    </view>
+
+    <view class="time-select-view">
+      <view class="time-title">价格明细</view>
+      <view class="price-detail">
+        <view class="price-detail-item">
+          <view class="item-name">
+            空间费用（5人以内）
+          </view>
+          <view class="item-price">
+            ￥1855
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="time-select-view">
+      <view class="total-view">
+        <view class="total-text">总价</view>
+        <view class="total-price">￥1875</view>
+      </view>
+      <view class="total-view">
+        <view class="total-text-tiny">(人均价格)</view>
+        <view class="total-price-tiny">(约￥375)</view>
+      </view>
+    
+    </view>
+
+
+
+    <view class="foot-view"></view>
+  </scroll-view>
+  <view class="bottom-bar">
+    <view class="xun-view">
+      <text>询</text>
+    </view>
+  </view>
+  <view class="bottom-bar-go">
+    <view class="view-btn-2">
+      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">下一步 确认使用条款</button>
+    </view>
+  </view>
+</view>
