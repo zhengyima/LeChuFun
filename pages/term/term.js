@@ -158,8 +158,8 @@ Page({
     });
   },
   order_func:function(e){
-    wx.navigateTo({
-      url: "../contact/contact"
+    wx.redirectTo({
+      url: "../success/success"
     })
   }
 })

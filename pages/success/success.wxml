@@ -1,0 +1,87 @@
+<!--success.wxml-->
+<view class="container mycontainer">
+  <view class="my-scroll">
+    <view class="success-info-view">
+      <view class="success-icon-view">
+         <icon type="success" size="60"/>
+      </view>
+      <view class="success-text-view">
+        <view class="success-text-title-view">
+          <text class="title-text">好处空间预约成功！</text>
+        </view>
+        <view class="success-text-text-view">
+          <text class="detail-text">感谢您选择了玩处！
+          我们的工作人员会尽快与您联系，请注意电话或者微信哦</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="status-view">
+      <view class="status-title-view">
+        <text class="title-text">目前您的预订为“尚未确认”状态</text>
+      </view>
+      <view class="status-detail-view">
+        <text class="detail-text">在我们的工作人员与您确认好预订细节之后，好处会收取一小部分订金
+        之后您的预订就会被确认，可以到我的预约中查看，记得分享邀请好友一起来体验</text>
+      </view>
+    </view>
+
+    <view class="room-view">
+      <view class="room-title-view">
+        HiLight·聚会派对
+      </view>
+      <view class="room-detail-view">
+        <view class="room-img-view">
+          <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+        </view>
+        <view class="room-info-view">
+          <view class="room-date-view">
+            <text class="detail-text">2017年12月18日 星期一</text>
+          </view>
+          <view class="room-time-view">
+            <text class="detail-text">6:00AM 至 9:00AM</text>
+          </view>
+          <view class="room-num-view">
+            <text class="detail-text">5人以内</text>
+          </view>
+          <view class="room-price-view">
+            <text class="detail-text" style="font-weight:500;">总价：1875元</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="map-view">
+      <view class="tiny-title-view">长乐路</view>
+      <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" style="width:100%;height:500rpx;margin-top:40rpx;" show-location>
+      </map>
+    </view>
+
+    <view class="contact-view">
+      <view class="tiny-title-view">联系方式</view>
+      <view class="contact-detail-view">
+        <view class="contact-item-view">
+          <text class="detail-text">昵称：马正一</text>
+        </view>
+        <view class="contact-item-view">
+          <text class="detail-text">联系电话：18810971511</text>
+        </view>
+        <view class="contact-item-view">
+          <text class="detail-text">微信号：Xxx</text>
+        </view>
+        <view class="contact-item-view"></view>
+      </view>
+    </view>
+
+    <view class="foot-view"></view>
+  </view>
+  <view class="bottom-bar">
+    <view class="xun-view">
+      <text>询</text>
+    </view>
+  </view>
+  <view class="bottom-bar-go">
+    <view class="view-btn-2">
+      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">确认</button>
+    </view>
+  </view>
+</view>

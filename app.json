@@ -5,7 +5,9 @@
     "pages/detail/detail",
     "pages/contact/contact",
     "pages/Order/Order",
-    "pages/term/term"
+    "pages/term/term",
+    "pages/success/success",
+    "pages/resnow/resnow"
   ],
   "window": {
     "backgroundTextStyle": "bold",
@@ -27,7 +29,7 @@
         "text": "空间列表"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/resnow/resnow",
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my_put.png",
         "text": "我的预约"

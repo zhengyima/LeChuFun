@@ -1,0 +1,122 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.mycontainer{
+  padding:0 0;
+  background-color: #ffffff;
+}
+.my-scroll{
+  height:100%;
+  width:100%;
+}
+.navi-view{
+  width:100%;
+  display:flex;
+  position:fixed;
+  height:75rpx;
+  background-color: #ffffff;
+}
+.tab-list-0{
+  width:50%;
+  padding-left:10%;
+  font-weight:300;
+  font-size:30rpx;
+  padding-bottom:5rpx;
+}
+.tab-list-1{
+  width:50%;
+  padding-left:15%;
+  font-weight:300;
+  font-size:30rpx;
+  color:#fc8744;
+  padding-bottom:15rpx;
+  border-bottom:4rpx solid #fc8744;
+}
+.tab-list-2{
+  width:50%;
+  padding-left:15%;
+  font-weight:300;
+  font-size:30rpx;
+  padding-bottom:9rpx;
+}
+
+.tab-list-3{
+  width:50%;
+  padding-left:10%;
+  font-weight:300;
+  font-size:30rpx;
+  color:#fc8744;
+  padding-bottom:15rpx;
+  border-bottom:4rpx solid #fc8744;
+}
+.white-view{
+  height:75rpx;
+  background-color:#ffffff;
+  width:100%;
+}
+.history-view{
+  width:100%;
+  height:100%;
+  background-color:#e5e5e5;
+  padding: 50rpx 3%;
+}
+.history-card-view{
+  background-color: #737373;
+  color:white;
+  display:flex;
+  width:90%;
+  height:400rpx;
+  padding:30rpx 4%;
+  padding-right:0%;
+  margin-bottom:60rpx;
+}
+.card-info-view{
+  width:80%;
+}
+.card-master-view{
+  width:18%;
+}
+.master-title-view{
+  font-size:12px;
+  font-weight:300;
+}
+.card-title-view{
+  font-size:22px;
+  font-weight:300;
+}
+.card-date-view{
+  font-size:15px;
+  font-weight:300;
+}
+.card-time-view{
+  font-size:15px;
+  font-weight:300;
+}
+.master-image{
+  height:40px;
+  width:40px;
+  border-radius: 100%;
+}
+.master-name-view{
+  font-size:12px;
+  font-weight:300;
+}
