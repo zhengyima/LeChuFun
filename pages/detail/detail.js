@@ -52,9 +52,9 @@ Page({
       url: "../detail/detail"
     })
   },
-  order_func:function(){
+  order_func:function(e){
     wx.navigateTo({
-      url: "../Order/Order"
+      url: "../Order/Order?hno=" +e.currentTarget.dataset.hno
     })
   },
   regionchange(e) {
