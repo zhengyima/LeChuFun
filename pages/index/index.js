@@ -17,9 +17,11 @@ Page({
     interval: 5000,
     duration: 1000
   },
-  to_detail:function(){
+  to_detail:function(e){
+    var hno = e.currentTarget.dataset.hno;
+    var url = "../detail/detail?hno=" + hno;
     wx.navigateTo({
-      url: "../detail/detail"
+      url: url
     })
   },
   onLoad: function (options) {

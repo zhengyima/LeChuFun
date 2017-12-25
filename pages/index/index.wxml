@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container mycontainer">
   <scroll-view scroll-y="true" class="my-scroll">
-    <view class="room-view" bindtap="to_detail" wx:for="{{lists}}">
+    <view class="room-view" bindtap="to_detail" wx:for="{{lists}}" data-hno="{{item.hno}}">
       <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
         <swiper-item class="my-swiper-item" wx:for="{{item.images}}">
