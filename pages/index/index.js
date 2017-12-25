@@ -1,5 +1,7 @@
 
 //index.js
+const util = require('../../utils/util.js')
+var config = require("../../config.js")
 var app = getApp()
 Page({
   data: {
@@ -18,6 +20,26 @@ Page({
   to_detail:function(){
     wx.navigateTo({
       url: "../detail/detail"
+    })
+  },
+  onLoad: function (options) {
+    //app.getUserinfo();
+    console.log("asd");
+    var that = this;
+    wx.request({
+      url: config.host + '/index',
+      data: {},
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        var lists = res.data;
+        console.log(lists);
+        that.setData({ lists: lists })
+      }
     })
   }
 })

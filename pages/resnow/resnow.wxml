@@ -12,7 +12,7 @@
       </navigator>
     </view>
     <view class="white-view"></view>
-    <view class="history-view">
+    <view class="history-view" wx:if="{{type == 1}}">
       <view class="history-card-view">
         <view class="card-info-view">
           <view class="card-title-view">
