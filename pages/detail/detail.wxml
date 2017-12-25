@@ -4,11 +4,8 @@
     <view class="swiper-view">
       <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
-        <swiper-item class="my-swiper-item">
-            <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
-        </swiper-item>
-        <swiper-item class="my-swiper-item">
-            <image src="https://mina.mapglory.com/static/images/girl1_2.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+        <swiper-item class="my-swiper-item" wx:for="{{lists.images}}">
+            <image src="{{item.purl}}" class="room-image"   bindlongpress='image_longPress' data-src="{{item.purl}}" />
         </swiper-item>
       </swiper>
       <view class="jianbian">
@@ -16,36 +13,24 @@
       <view class="info-view">
         <view class="text-info-view">
           <view class="title-view">
-            <text class="black-title">HiLight</text>
+            <text class="black-title">{{lists.htitle1}}</text>
           </view>
           <view class="name-view">
-            <text class="black-name">光与影的美学空间</text>
+            <text class="black-name">{{lists.htitle2}}</text>
           </view>
           <view class="label-view">
-            <view class="label">
-              <text class="label-text">长乐路</text>
-            </view>
-            <view class="label">
-              <text class="label-text">时尚</text>
-            </view>
-             <view class="label">
-              <text class="label-text">个性</text>
-            </view>
-             <view class="label">
-              <text class="label-text">明朗</text>
-            </view>
-            <view class="label">
-              <text class="label-text">开放</text>
+            <view class="label" wx:for="{{lists.labels}}" >
+              <text class="label-text">{{item.lname}}</text>
             </view>
           </view>
         </view>
         <view class="price-info-view">
           <view class="price-num-view">
-            <view class="num-view">￥520</view>
+            <view class="num-view">￥{{lists.hprice}}</view>
             <view class="per-hour-view">/时起</view>
           </view>
           <view class="old-price-view">
-            <text class="old-text">原价￥580</text>
+            <text class="old-text">原价￥{{lists.hprice_old}}</text>
           </view>
         </view>
       </view>
@@ -55,19 +40,19 @@
         <text class="large-title">关于空间</text>
       </view>
       <view class="about-detail-view">
-        <text class="detail-text">按时间不懂降本增效基本冲击波骄傲不是东北周晓鸥并从哲学噢不从珠江新城捏造陷阱脑USB东郊小镇保持基本在建瓯传播爱是不啊鼠标线按时间不懂降本增效基本冲击波骄傲不是东北周晓鸥并从哲学噢不从珠江新城捏造陷阱脑USB东郊小镇保持基本在建瓯传播爱是不啊鼠标线按时间不懂降本增效基本冲击波骄傲不是东北周晓鸥并从哲学噢不从珠江新城捏造陷阱脑USB东郊小镇保持基本在建瓯传播爱是不啊鼠标线噢不从珠江新城捏造陷阱脑USB东郊小镇保持基本在建瓯传播爱是不啊鼠标线按时间不懂降本增效基本冲击波骄傲不是东北周晓鸥并从哲学噢不从珠江新城捏造陷阱脑USB东郊小镇保持基本 </text>
+        <text class="detail-text">{{lists.hdetail}} </text>
       </view>
     </view>
     <view class="label-icon-view">
-      <view class="label-icon">
+      <view class="label-icon" wx:for="{{lists.icons}}">
         <view class="label-icon-image">
-          <image src="../../images/icon1.png" class="icon-image" ></image>
+          <image src="{{item.iurl}}" class="icon-image" ></image>
         </view>
         <view class="label-icon-text">
-          <text class="icon-text">最多40人</text>
+          <text class="icon-text">{{item.iname}}</text>
         </view>
       </view>
-      <view class="label-icon">
+      <!--view class="label-icon">
         <view class="label-icon-image">
           <image src="../../images/icon2.png" class="icon-image" ></image>
         </view>
@@ -98,18 +83,18 @@
         <view class="label-icon-text">
           <text class="icon-text">展览展会</text>
         </view>
-      </view>
+      </view-->
     </view>
     <view class="address-view">
       <view class="address-title-view">
         <text class="large-title">空间地址</text>
       </view>
       <view class="address-detail-view">
-        <text class="detail-text">Hilight位于安不上的矩阵不想吃结不了账九点吧搜吧从现在并从基本支出即便上次就不想再成本俱乐部初级中学初级中学帮唱嘉宾专项检查不接班  </text>
+        <text class="detail-text">{{lists.haddress}}</text>
       </view>
 
       <view class="map-view">
-<map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" style="width:100%;height:500rpx;" show-location></map>
+<map id="map" longitude="{{lists.hlongitude}}" latitude="{{lists.hlatitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" style="width:100%;height:500rpx;" show-location></map>
        
       </view>
     </view>
@@ -126,11 +111,8 @@
       <view class="image-record-detail-view">
         <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
-          <swiper-item style="width:50%;height:100%;" class="myitem" >
-              <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="record-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg"/>
-          </swiper-item>
-          <swiper-item style="transform:translate(0%, 0%) translateZ(0px);will-change:auto;position:absolute;width:50%;height:100%;" class="myitem" >
-              <image src="https://mina.mapglory.com/static/images/girl1_2.jpeg" class="record-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+          <swiper-item style="width:50%;height:100%;" class="myitem" wx:for="{{lists.memory}}">
+              <image src="{{item.murl}}" class="record-image"   bindlongpress='image_longPress' data-src="{{item.murl}}"/>
           </swiper-item>
         </swiper>
       </view>
@@ -151,29 +133,11 @@
           </view>
         </view>
         <view class="room-equip-icon-view">
-          <view class="room-equip-icon">
+          <view class="room-equip-icon" wx:for="{{lists.equip.videos}}">
             <view class="room-equip-icon-img">
-              <image src="../../images/icon3.png" class="equip-icon"></image>
+              <image src="{{item.eurl}}" class="equip-icon"></image>
             </view>
-            <view class="room-equip-icon-text"><text class="icon-text">高清投影仪</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">环绕音响</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">Apple TV</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">麦克风</text></view>
+            <view class="room-equip-icon-text"><text class="icon-text">{{item.ename}}</text></view>
           </view>
         </view>
       </view>
@@ -188,41 +152,11 @@
           </view>
         </view>
         <view class="room-equip-icon-view">
-          <view class="room-equip-icon">
+          <view class="room-equip-icon" wx:for="{{lists.equip.game}}">
             <view class="room-equip-icon-img">
-              <image src="../../images/icon3.png" class="equip-icon"></image>
+              <image src="{{item.eurl}}" class="equip-icon"></image>
             </view>
-            <view class="room-equip-icon-text"><text class="icon-text">德州扑克</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">狼人杀</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">扑克</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">麻将</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">骰子</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">UNO纸牌</text></view>
+            <view class="room-equip-icon-text"><text class="icon-text">{{item.ename}}</text></view>
           </view>
         </view>
       </view>
@@ -236,17 +170,11 @@
           </view>
         </view>
         <view class="room-equip-icon-view">
-          <view class="room-equip-icon">
+          <view class="room-equip-icon" wx:for="{{lists.equip.meal}}">
             <view class="room-equip-icon-img">
-              <image src="../../images/icon3.png" class="equip-icon"></image>
+              <image src="{{item.eurl}}" class="equip-icon"></image>
             </view>
-            <view class="room-equip-icon-text"><text class="icon-text">红豆香槟杯</text></view>
-          </view>
-          <view class="room-equip-icon">
-            <view class="room-equip-icon-img">
-              <image src="../../images/icon4.png" class="equip-icon"></image>
-            </view>
-            <view class="room-equip-icon-text"><text class="icon-text">咖啡水杯</text></view>
+            <view class="room-equip-icon-text"><text class="icon-text">{{item.ename}}</text></view>
           </view>
         </view>
       </view>      
