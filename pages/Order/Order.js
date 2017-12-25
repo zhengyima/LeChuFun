@@ -1,5 +1,6 @@
-
-//details.js
+//order.js
+const util = require('../../utils/util.js')
+var config = require("../../config.js")
 var app = getApp()
 Page({
   data: {
@@ -127,6 +128,27 @@ Page({
   order_func:function(e){
     wx.navigateTo({
       url: "../contact/contact"
+    })
+  },
+  onLoad: function (options) {
+    //app.getUserinfo();
+    var hno = options.hno;
+    this.setData({ hno: hno });
+    var that = this;
+    wx.request({
+      url: config.host + '/order',
+      data: { hno: hno },
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        var lists = res.data[0];
+        console.log(lists);
+        that.setData({ lists: lists });
+      }
     })
   }
 })

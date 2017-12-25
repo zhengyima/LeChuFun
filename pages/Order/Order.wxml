@@ -2,13 +2,13 @@
 <view class="container mycontainer">
   <scroll-view scroll-y="true" class="my-scroll">
     <view class="room-img-view">
-      <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="room-image"   bindlongpress='image_longPress' data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+      <image src="{{lists.hpic}}" class="room-image"   bindlongpress='image_longPress' data-src="{{lists.hpic}}" />
       <view class="info-view">
         <view class="name-view">
-          HiLight 光与影的美学空间
+          {{lists.htitle1}} {{lists.htitle2}}
         </view>
         <view class="addr-view">
-          长乐路
+          {{lists.htitle3}}
         </view>
       </view>
     </view>
