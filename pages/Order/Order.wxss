@@ -191,6 +191,10 @@
 .foot-view{
   height:250rpx;
 }
+.need-view{
+  margin-top:30rpx;
+  width:100%;
+}
 
 .bottom-bar-go{
   position:fixed;

@@ -79,7 +79,6 @@
         </view>
       </view>
     </view>
-
     <view class="time-select-view">
       <view class="total-view">
         <view class="total-text">总价</view>
@@ -89,11 +88,7 @@
         <view class="total-text-tiny">(人均价格)</view>
         <view class="total-price-tiny">(约￥375)</view>
       </view>
-    
     </view>
-
-
-
     <view class="foot-view"></view>
   </scroll-view>
   <view class="bottom-bar">

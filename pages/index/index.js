@@ -25,7 +25,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    //app.getUserinfo();
+    app.getUserinfo();
     console.log("asd");
     var that = this;
     wx.request({

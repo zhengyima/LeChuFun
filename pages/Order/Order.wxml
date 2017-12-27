@@ -12,7 +12,6 @@
         </view>
       </view>
     </view>
-
     <view class="time-select-view">
       <view class="time-title">预定日期*</view>
       <view class="time-select">
@@ -39,7 +38,7 @@
                 <image src="../../images/icon2.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
-                <text class="holder">{{time_holder_start}}</text> {{time1}}
+                <text class="holder">{{time_holder_start}}</text> {{timestart}}
               </view>
               <image src="../../images/picker_icon.png" class="picker-icon-tiny" ></image>
             </view>
@@ -55,7 +54,7 @@
                 <image src="../../images/icon2.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
-                <text class="holder">{{time_holder_end}}</text> {{time2}}
+                <text class="holder">{{time_holder_end}}</text> {{timeend}}
               </view>
               <image src="../../images/picker_icon.png" class="picker-icon-tiny" ></image>
             </view>
@@ -112,8 +111,8 @@
       <view class="half-select-view">
         <view class="time-title">是否需要提前入场准备</view>
         <view class="time-select-half" style="padding-top:10rpx;border-bottom: 1rpx solid #ffffff">
-          <radio-group class="radio-group" bindchange="radioChange">
-          <view class="radio-view"  wx:for="{{items}}">
+          <radio-group class="radio-group" bindchange="readyChange">
+          <view class="radio-view"  wx:for="{{readyitems}}">
             <label class="myradio-label">
               <radio value="{{item.name}}" checked="{{item.checked}}" class="myradio"/>{{item.value}}
             </label>
@@ -136,10 +135,10 @@
     </view>
     <view class="two-select-view" style="margin-top:20rpx;">
       <view class="half-select-view">
-        <view class="time-title">是否需要提前入场准备</view>
+        <view class="time-title">是否需要烧烤设备</view>
         <view class="time-select-half" style="padding-top:10rpx;border-bottom: 1rpx solid #ffffff">
-          <radio-group class="radio-group" bindchange="radioChange">
-          <view class="radio-view"  wx:for="{{items}}">
+          <radio-group class="radio-group" bindchange="barbChange">
+          <view class="radio-view"  wx:for="{{barbs}}">
             <label class="myradio-label">
               <radio value="{{item.name}}" checked="{{item.checked}}" class="myradio"/>{{item.value}}
             </label>
@@ -148,10 +147,10 @@
         </view>
       </view>
       <view class="half-select-view">
-        <view class="time-title">是否需要游戏设备</view>
+        <view class="time-title">是否需要发票</view>
         <view class="time-select-half" style="padding-top:10rpx;border-bottom: 1rpx solid #ffffff">
-          <radio-group class="radio-group" bindchange="equipChange">
-          <view class="radio-view" wx:for="{{equips}}">
+          <radio-group class="radio-group" bindchange="faChange">
+          <view class="radio-view" wx:for="{{fapiaos}}">
             <label class="myradio-label">
               <radio value="{{item.name}}" checked="{{item.checked}}" class="myradio"/>{{item.value}}
             </label>
