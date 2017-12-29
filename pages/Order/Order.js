@@ -233,6 +233,7 @@ Page({
         pagenum += "equip=" + that.data.equip_flag + "&";
         pagenum += "barb=" + that.data.barb_flag + "&";
         pagenum += "fapiao=" + that.data.fapiao_flag + "&";
+        pagenum += "fapiao=" + that.data.fapiao_flag + "&";
         pagenum += "tip=" + that.data.need_text;
         wx.navigateTo({
           url: "../contact/contact?" + pagenum

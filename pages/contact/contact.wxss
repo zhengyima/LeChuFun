@@ -62,7 +62,7 @@
 }
 .info-time-view{
   height:100%;
-  width:30%;
+  width:20%;
 }
 .info-title{
   font-size:30rpx
@@ -111,6 +111,7 @@ info-detail{
   display:flex;
   font-weight:400;
   font-size:25rpx;
+  margin-bottom:20rpx;
 }
 
 .item-name{
@@ -128,22 +129,22 @@ info-detail{
 .total-text{
   font-weight:400;
   font-size:30rpx;
-  width:73%;
+  width:75%;
 }
 .total-price{
   font-weight:400;
   font-size:30rpx;
-  width:27%;
+  width:25%;
 }
 .total-text-tiny{
   font-weight:300;
   font-size:27rpx;
-  width:71%;
+  width:75%;
 }
 .total-price-tiny{
   font-weight:300;
   font-size:27rpx;
-  width:29%;
+  width:25%;
 }
 .time-picker{
   display:flex;

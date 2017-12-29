@@ -151,12 +151,74 @@ Page({
     });
   },
   order_func: function (e) {
-    wx.navigateTo({
-      url: "../term/term"
+    console.log(this.data)
+    if(this.data.name == undefined){
+      wx.showToast({
+        title: '请输入姓名~',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    if (this.data.phone == undefined) {
+      wx.showToast({
+        title: '请输入电话~',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    if (this.data.wechat == undefined) {
+      wx.showToast({
+        title: '请输入微信号~',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    var that = this
+    var request_data = { hno: this.data.hno, date: this.data.date, start: this.data.start, end: this.data.end, type: this.data.type, num: this.data.num, ready: this.data.ready, equip: this.data.equip, barb: this.data.barb, fapiao: this.data.fapiao, tip: this.data.tip, price_total: this.data.price_total, name: this.data.name, phone: this.data.phone, wechat: this.data.wechat, firm: this.data.firm, dep: this.data.dep, code: this.data.code, openid: wx.getStorageSync('openid')}
+    console.log(request_data)
+    wx.request({
+      url: config.host + '/contact_submit',
+      data: request_data,
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        //var lists = res.data[0];
+        //console.log(lists);
+        var pagenum = "date=" + that.data.date + "&";
+        pagenum += "hno=" + that.data.hno + "&";
+        pagenum += "start=" + that.data.start + "&";
+        pagenum += "end=" + that.data.end + "&";
+        pagenum += "type=" + that.data.type + "&";
+        pagenum += "num=" + that.data.num + "&";
+        pagenum += "ready=" + that.data.ready + "&";
+        pagenum += "equip=" + that.data.equip + "&";
+        pagenum += "barb=" + that.data.barb+ "&";
+        pagenum += "fapiao=" + that.data.fapiao + "&";
+        pagenum += "cno=" + res.data.cno + "&";
+        pagenum += "price_total=" + that.data.price_total + "&";
+        pagenum += "tip=" + that.data.tip;
+
+        wx.navigateTo({
+          url: "../term/term?"+pagenum
+        })
+      }
     })
+
+    
   },
   onLoad: function (options) {
     console.log(options)
+    this.setData(options)
+
+    var that = this
+
     wx.request({
       url: config.host + '/contact',
       data: { hno: options.hno,timestart:options.start,timeend:options.end,date:options.date,num:options.num, },
@@ -169,7 +231,7 @@ Page({
         console.log(res);
         //var lists = res.data[0];
         //console.log(lists);
-        //that.setData({ lists: lists });
+        that.setData({ date_text: res.data.date,house_info:res.data.house_info[0],detail:res.data.detail,price_ave:res.data.price_ave,price_total:res.data.price_total,time:res.data.time, });
       }
     })
   }

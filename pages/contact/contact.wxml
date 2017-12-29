@@ -6,15 +6,15 @@
       <view class="info-view">
         <view class="info-name-view">
           <view class="info-title">预约空间</view>
-          <view class="info-detail">Hilight</view>
+          <view class="info-detail">{{house_info.htitle1}}</view>
         </view>
         <view class="info-date-view">
           <view class="info-title">预约日期</view>
-          <view class="info-title">2017年12月28日星期一</view>
+          <view class="info-title">{{date_text}}</view>
         </view>
         <view class="info-time-view">
           <view class="info-title">预约时间</view>
-          <view class="info-title">6:00AM 至 9:00AM</view>
+          <view class="info-title">{{time}}</view>
         </view>
       </view>
     </view>
@@ -47,13 +47,13 @@
       <view class="half-select-view">
         <view class="time-title">公司:</view>
         <view class="time-select-half">
-          <input class="need-input" placeholder-class="holder" placeholder="请输入公司名" type="text" value="{{firm}}" bindinput="bindfirm" ></input>
+          <input class="need-input" placeholder-class="holder" placeholder="(选)请输入公司名" type="text" value="{{firm}}" bindinput="bindfirm" ></input>
         </view>
       </view>
       <view class="half-select-view">
         <view class="time-title">部门:</view>
         <view class="time-select-half">
-          <input class="need-input" placeholder-class="holder" placeholder="请输入职务信息" type="text" value="{{dep}}" bindinput="binddep" ></input>
+          <input class="need-input" placeholder-class="holder" placeholder="(选)请输入职务信息" type="text" value="{{dep}}" bindinput="binddep" ></input>
         </view>
       </view>
     </view>
@@ -61,7 +61,7 @@
       <view class="half-select-view">
         <view class="time-title">优惠码:</view>
         <view class="time-select-half">
-          <input class="need-input" placeholder-class="holder" placeholder="请输入优惠码" type="text" value="{{code}}" bindinput="bindcode" ></input>
+          <input class="need-input" placeholder-class="holder" placeholder="(选)请输入优惠码" type="text" value="{{code}}" bindinput="bindcode" ></input>
         </view>
       </view>
     </view>
@@ -69,12 +69,12 @@
     <view class="time-select-view">
       <view class="time-title">价格明细</view>
       <view class="price-detail">
-        <view class="price-detail-item">
+        <view class="price-detail-item" wx:for="{{detail}}">
           <view class="item-name">
-            空间费用（5人以内）
+            {{item.name}}
           </view>
           <view class="item-price">
-            ￥1855
+            {{item.price}}
           </view>
         </view>
       </view>
@@ -82,11 +82,11 @@
     <view class="time-select-view">
       <view class="total-view">
         <view class="total-text">总价</view>
-        <view class="total-price">￥1875</view>
+        <view class="total-price">￥{{price_total}}</view>
       </view>
       <view class="total-view">
         <view class="total-text-tiny">(人均价格)</view>
-        <view class="total-price-tiny">(约￥375)</view>
+        <view class="total-price-tiny">(约￥{{price_ave}})</view>
       </view>
     </view>
     <view class="foot-view"></view>

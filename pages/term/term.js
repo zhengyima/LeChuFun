@@ -1,5 +1,7 @@
 
-//details.js
+//term.js
+const util = require('../../utils/util.js')
+var config = require("../../config.js")
 var app = getApp()
 Page({
   data: {
@@ -158,8 +160,63 @@ Page({
     });
   },
   order_func:function(e){
-    wx.redirectTo({
-      url: "../success/success"
-    })
+    if (this.data.need1 && this.data.need2 && this.data.need3 && this.data.need4 && this.data.need5 && this.data.need6){
+      wx.request({
+        url: config.host + '/pay',
+        data: { hno: this.data.hno, date: this.data.date, start: this.data.start, end: this.data.end, type: this.data.type, num: this.data.num, ready: this.data.ready, equip: this.data.equip, barb: this.data.barb, fapiao: this.data.fapiao, tip: this.data.tip, price_total: this.data.price_total, openid: wx.getStorageSync('openid'),cno:this.data.cno },
+        method: 'GET',
+        header: {
+          'Authorization': "JWT ",
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        success: function (res) {
+          console.log(res);
+          //var lists = res.data[0];
+          //console.log(lists);
+          if(res.data.my_status == 1 ){
+            wx.requestPayment({
+              timeStamp: res.data.timeStamp,
+              nonceStr: res.data.nonceStr,
+              package: res.data.package,
+              signType: res.data.signType,
+              paySign: res.data.paySign,
+              'success': function (res) {
+                console.log("rp success");
+                console.log(res);
+                wx.showToast({
+                  title: '成功，3秒后跳转',
+                  icon: 'success',
+                  duration: 2000
+                });
+                setTimeout(function () {
+                  wx.redirectTo({
+                    url: "../success/success"
+                  })
+                }, 3000)
+              },
+              'fail': function (res) {
+                console.log(res)
+              }
+            })
+          }
+
+        }
+      })
+      
+      
+    }
+    else{
+      wx.showToast({
+        title: '条款未勾选~',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    
+  },
+  onLoad: function (options) {
+    console.log(options)
+    this.setData(options)
   }
 })
