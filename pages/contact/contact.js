@@ -1,4 +1,5 @@
-
+const util = require('../../utils/util.js')
+var config = require("../../config.js")
 //contact.js
 var app = getApp()
 Page({
@@ -152,6 +153,24 @@ Page({
   order_func: function (e) {
     wx.navigateTo({
       url: "../term/term"
+    })
+  },
+  onLoad: function (options) {
+    console.log(options)
+    wx.request({
+      url: config.host + '/contact',
+      data: { hno: options.hno,timestart:options.start,timeend:options.end,date:options.date,num:options.num, },
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        //var lists = res.data[0];
+        //console.log(lists);
+        //that.setData({ lists: lists });
+      }
     })
   }
 })

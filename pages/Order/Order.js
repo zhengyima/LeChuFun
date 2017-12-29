@@ -50,7 +50,7 @@ Page({
     time_holder_start:'开始时间',
     time_holder_end:'结束时间',
     date_holder:'请选择日期',
-    nums:['11到20人','21到30人'],
+    nums:['1到5人','6到10人','11到20人','21到30人'],
     num_holder:'请选择人数',
     equip_flag:0,
     fapiao_flag:0,
@@ -74,7 +74,9 @@ Page({
     barbs: [
       { name: '0', value: '不需要', checked: 'true' },
       { name: '1', value: '需要' },
-    ]
+    ],
+    time1:"07:00",
+    time2:"09:00"
   },
   to_detail: function () {
     wx.navigateTo({
@@ -177,19 +179,65 @@ Page({
     })
   },
   order_func: function (e) {
-    var pagenum = "date="+this.data.date+"&";
-    pagenum += "hno=" + this.data.hno + "&";
-    pagenum += "start="+this.data.timestart+"&";
-    pagenum += "end="+this.data.timeend+"&";
-    pagenum += "type="+this.data.type_index+"&";
-    pagenum += "num="+this.data.num_index+"&";
-    pagenum += "ready="+this.data.ready_flag+"&";
-    pagenum += "equip="+this.data.equip_flag+"&";
-    pagenum += "barb="+this.data.barb_flag+"&";
-    pagenum += "fapiao="+this.data.fapiao_flag+"&";
-    pagenum += "tip="+this.data.need_text;
-    wx.navigateTo({
-      url: "../contact/contact?"+pagenum
+    if (this.data.date == undefined || this.data.timestart == undefined || this.data.timeend == undefined){
+      wx.showToast({
+        title: '请选择日期时间!',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    if (this.data.type_index == undefined ) {
+      wx.showToast({
+        title: '请选择活动类型!',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    if (this.data.num_index == undefined) {
+      wx.showToast({
+        title: '请选择客人数量!',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    var that = this;
+    wx.request({
+      url: config.host + '/cal_price',
+      data: { hno: this.data.hno,timestart:this.data.timestart,timeend:this.data.timeend },
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        var price_total = res.data.total_price;
+        if (price_total <0){
+          wx.showToast({
+            title: '时间输入错误，是不是输反了呀!',
+            icon: 'success',
+            duration: 2000
+          })
+          return ;
+        }
+        var pagenum = "date=" + that.data.date + "&";
+        pagenum += "hno=" + that.data.hno + "&";
+        pagenum += "start=" + that.data.timestart + "&";
+        pagenum += "end=" + that.data.timeend + "&";
+        pagenum += "type=" + that.data.type_index + "&";
+        pagenum += "num=" + that.data.num_index + "&";
+        pagenum += "ready=" + that.data.ready_flag + "&";
+        pagenum += "equip=" + that.data.equip_flag + "&";
+        pagenum += "barb=" + that.data.barb_flag + "&";
+        pagenum += "fapiao=" + that.data.fapiao_flag + "&";
+        pagenum += "tip=" + that.data.need_text;
+        wx.navigateTo({
+          url: "../contact/contact?" + pagenum
+        })
+      }
     })
   },
 })

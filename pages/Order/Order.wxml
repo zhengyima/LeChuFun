@@ -32,7 +32,7 @@
       <view class="half-select-view">
         <view class="time-title">活动开始时间*</view>
         <view class="time-select-half">
-          <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange1" class="time-picker">
+          <picker mode="time" value="{{time1}}"bindchange="bindTimeChange1" class="time-picker">
             <view class="picker-inner-view">
               <view class="left-img-view">
                 <image src="../../images/icon2.png" class="picker-icon" ></image>
@@ -48,7 +48,7 @@
       <view class="half-select-view">
         <view class="time-title">活动结束时间*</view>
         <view class="time-select-half">
-          <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange2" class="time-picker">
+          <picker mode="time" value="{{time2}}" bindchange="bindTimeChange2" class="time-picker">
             <view class="picker-inner-view">
               <view class="left-img-view">
                 <image src="../../images/icon2.png" class="picker-icon" ></image>
