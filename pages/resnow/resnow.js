@@ -1,5 +1,7 @@
 
-//index.js
+//resnow.js
+const util = require('../../utils/util.js')
+var config = require("../../config.js")
 var app = getApp()
 Page({
   data: {
@@ -38,6 +40,39 @@ Page({
     else {mytype = options.type};
     this.setData({
       type: mytype
+    })
+    var that = this
+    wx.request({
+      url: config.host + '/res_index',
+      data: { openid: wx.getStorageSync('openid')},
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        //var lists = res.data;
+        //console.log(lists);
+        that.setData({ oh: res.data[0],contact:res.data[1][0] })
+      }
+    })
+  },
+  to_success:function(e){
+    var pagenum = "date=" + e.currentTarget.dataset.date + "&";
+    pagenum += "hno=" + e.currentTarget.dataset.hno + "&";
+    pagenum += "start=" + e.currentTarget.dataset.start + "&";
+    pagenum += "end=" + e.currentTarget.dataset.end + "&";
+    //pagenum += "type=" + that.data.type + "&";
+    pagenum += "num=" + e.currentTarget.dataset.num + "&";
+    //pagenum += "ready=" + that.data.ready + "&";
+    //pagenum += "equip=" + that.data.equip + "&";
+    //pagenum += "barb=" + that.data.barb + "&";
+    //pagenum += "fapiao=" + that.data.fapiao + "&";
+    pagenum += "cno=" + e.currentTarget.dataset.cno + "&";
+    pagenum += "price_total=" + e.currentTarget.dataset.total + "&";
+    wx.redirectTo({
+      url: "../res_detail/res_detail?" + pagenum
     })
   }
 })

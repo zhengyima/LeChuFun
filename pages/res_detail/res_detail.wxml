@@ -1,21 +1,6 @@
 <!--success.wxml-->
 <view class="container mycontainer">
   <view class="my-scroll">
-    <view class="success-info-view">
-      <view class="success-icon-view">
-         <icon type="success" size="60"/>
-      </view>
-      <view class="success-text-view">
-        <view class="success-text-title-view">
-          <text class="title-text">好处空间预约成功！</text>
-        </view>
-        <view class="success-text-text-view">
-          <text class="detail-text">感谢您选择了玩处！
-          我们的工作人员会尽快与您联系，请注意电话或者微信哦</text>
-        </view>
-      </view>
-    </view>
-
     <!--view class="status-view">
       <view class="status-title-view">
         <text class="title-text">目前您的预订为“尚未确认”状态</text>
@@ -77,11 +62,6 @@
   <view class="bottom-bar">
     <view class="xun-view">
       <text>询</text>
-    </view>
-  </view>
-  <view class="bottom-bar-go">
-    <view class="view-btn-2">
-      <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">确认</button>
     </view>
   </view>
 </view>

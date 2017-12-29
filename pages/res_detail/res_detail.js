@@ -48,12 +48,12 @@ Page({
     }],
     nums: ['1到5人', '6到10人', '11到20人', '21到30人']
   },
-  to_detail:function(){
+  to_detail: function () {
     wx.navigateTo({
       url: "../detail/detail"
     })
   },
-  order_func:function(){
+  order_func: function () {
     wx.switchTab({
       url: '/pages/index/index',
       success: function (e) {
@@ -79,7 +79,7 @@ Page({
     var that = this;
     wx.request({
       url: config.host + '/success',
-      data: { hno: hno,cno:this.data.cno },
+      data: { hno: hno, cno: this.data.cno },
       method: 'GET',
       header: {
         'Authorization': "JWT ",
@@ -90,7 +90,7 @@ Page({
         var lists = res.data[0][0];
         var contact = res.data[1][0]
         console.log(lists);
-        that.setData({ lists: lists,contact:contact });
+        that.setData({ lists: lists, contact: contact });
         that.setData({
           markers: [{
             iconPath: "../../images/logo.jpg",

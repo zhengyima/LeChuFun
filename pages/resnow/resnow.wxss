@@ -80,7 +80,7 @@
   padding: 50rpx 3%;
 }
 .history-card-view{
-  background-color: #737373;
+  
   color:white;
   display:flex;
   width:90%;
@@ -88,6 +88,7 @@
   padding:30rpx 4%;
   padding-right:0%;
   margin-bottom:60rpx;
+  
 }
 .card-info-view{
   width:80%;

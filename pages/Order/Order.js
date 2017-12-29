@@ -14,6 +14,7 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 1000,
+    times_text:"",
     markers: [{
       iconPath: "../../images/logo.jpg",
       id: 0,
@@ -94,10 +95,34 @@ Page({
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
+    var that = this
     this.setData({
       date: e.detail.value,
       date_holder:''
     })
+    wx.request({
+      url: config.host + '/check_date',
+      data: { hno: this.data.hno,date:this.data.date },
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+        var str = ""
+        for(var i=0;i<res.data.length;i++){
+          str += res.data[i]['ostart']+"-"+res.data[i]['oend']+"   \n"
+        }
+        that.setData({times_text:str})
+        console.log(str)
+        //var lists = res.data[0];
+        //console.log(lists);
+        //that.setData({ lists: lists });
+      }
+    })
+
+
   },
   bindTimeChange2: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -204,9 +229,10 @@ Page({
       return;
     }
     var that = this;
+
     wx.request({
-      url: config.host + '/cal_price',
-      data: { hno: this.data.hno,timestart:this.data.timestart,timeend:this.data.timeend },
+      url: config.host + '/check_time',
+      data: { hno: this.data.hno, date: this.data.date,start:this.data.timestart,end:this.data.timeend },
       method: 'GET',
       header: {
         'Authorization': "JWT ",
@@ -214,31 +240,63 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        var price_total = res.data.total_price;
-        if (price_total <0){
+        if(res.data.status == 0){
+          wx.request({
+            url: config.host + '/cal_price',
+            data: { hno: that.data.hno, timestart: that.data.timestart, timeend: that.data.timeend },
+            method: 'GET',
+            header: {
+              'Authorization': "JWT ",
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            success: function (res) {
+              console.log(res);
+              var price_total = res.data.total_price;
+              if (price_total < 0) {
+                wx.showToast({
+                  title: '时间输入错误，是不是输反了呀!',
+                  icon: 'success',
+                  duration: 2000
+                })
+                return;
+              }
+              var pagenum = "date=" + that.data.date + "&";
+              pagenum += "hno=" + that.data.hno + "&";
+              pagenum += "start=" + that.data.timestart + "&";
+              pagenum += "end=" + that.data.timeend + "&";
+              pagenum += "type=" + that.data.type_index + "&";
+              pagenum += "num=" + that.data.num_index + "&";
+              pagenum += "ready=" + that.data.ready_flag + "&";
+              pagenum += "equip=" + that.data.equip_flag + "&";
+              pagenum += "barb=" + that.data.barb_flag + "&";
+              pagenum += "fapiao=" + that.data.fapiao_flag + "&";
+              pagenum += "fapiao=" + that.data.fapiao_flag + "&";
+              pagenum += "tip=" + that.data.need_text;
+              wx.navigateTo({
+                url: "../contact/contact?" + pagenum
+              })
+            }
+          })
+        }
+        else if(res.data.status == 1){
           wx.showToast({
-            title: '时间输入错误，是不是输反了呀!',
+            title: '已经被占用了',
             icon: 'success',
             duration: 2000
           })
-          return ;
+          return;
         }
-        var pagenum = "date=" + that.data.date + "&";
-        pagenum += "hno=" + that.data.hno + "&";
-        pagenum += "start=" + that.data.timestart + "&";
-        pagenum += "end=" + that.data.timeend + "&";
-        pagenum += "type=" + that.data.type_index + "&";
-        pagenum += "num=" + that.data.num_index + "&";
-        pagenum += "ready=" + that.data.ready_flag + "&";
-        pagenum += "equip=" + that.data.equip_flag + "&";
-        pagenum += "barb=" + that.data.barb_flag + "&";
-        pagenum += "fapiao=" + that.data.fapiao_flag + "&";
-        pagenum += "fapiao=" + that.data.fapiao_flag + "&";
-        pagenum += "tip=" + that.data.need_text;
-        wx.navigateTo({
-          url: "../contact/contact?" + pagenum
-        })
+        else{
+          wx.showToast({
+            title: '时间非法',
+            icon: 'success',
+            duration: 2000
+          })
+          return;
+        }
       }
     })
+
+
   },
 })

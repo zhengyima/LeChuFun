@@ -221,7 +221,7 @@ Page({
 
     wx.request({
       url: config.host + '/contact',
-      data: { hno: options.hno,timestart:options.start,timeend:options.end,date:options.date,num:options.num, },
+      data: { hno: options.hno, timestart: options.start, timeend: options.end, date: options.date, num: options.num, openid: wx.getStorageSync('openid') },
       method: 'GET',
       header: {
         'Authorization': "JWT ",
@@ -231,7 +231,7 @@ Page({
         console.log(res);
         //var lists = res.data[0];
         //console.log(lists);
-        that.setData({ date_text: res.data.date,house_info:res.data.house_info[0],detail:res.data.detail,price_ave:res.data.price_ave,price_total:res.data.price_total,time:res.data.time, });
+        that.setData({ date_text: res.data.date, house_info: res.data.house_info[0], detail: res.data.detail, price_ave: res.data.price_ave, price_total: res.data.price_total, time: res.data.time, name: res.data.contact.uname, phone: res.data.contact.uphone, wechat: res.data.contact.uwechat, firm: res.data.contact.ufirm, dep: res.data.contact.udepartment,code:res.data.contact.ucode });
       }
     })
   }

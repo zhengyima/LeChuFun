@@ -1,4 +1,3 @@
-
 //term.js
 const util = require('../../utils/util.js')
 var config = require("../../config.js")
@@ -160,6 +159,7 @@ Page({
     });
   },
   order_func:function(e){
+    var that = this;
     if (this.data.need1 && this.data.need2 && this.data.need3 && this.data.need4 && this.data.need5 && this.data.need6){
       wx.request({
         url: config.host + '/pay',
@@ -189,8 +189,21 @@ Page({
                   duration: 2000
                 });
                 setTimeout(function () {
+                  var pagenum = "date=" + that.data.date + "&";
+                  pagenum += "hno=" + that.data.hno + "&";
+                  pagenum += "start=" + that.data.start + "&";
+                  pagenum += "end=" + that.data.end + "&";
+                  //pagenum += "type=" + that.data.type + "&";
+                  pagenum += "num=" + that.data.num + "&";
+                  //pagenum += "ready=" + that.data.ready + "&";
+                  //pagenum += "equip=" + that.data.equip + "&";
+                  //pagenum += "barb=" + that.data.barb + "&";
+                  //pagenum += "fapiao=" + that.data.fapiao + "&";
+                  pagenum += "cno=" + that.data.cno + "&";
+                  pagenum += "price_total=" + that.data.price_total + "&";
+                  //pagenum += "tip=" + that.data.tip;
                   wx.redirectTo({
-                    url: "../success/success"
+                    url: "../success/success?"+pagenum
                   })
                 }, 3000)
               },

@@ -13,16 +13,19 @@
     </view>
     <view class="white-view"></view>
     <view class="history-view" wx:if="{{type == 1}}">
-      <view class="history-card-view">
+      <view class="history-card-view" wx:for="{{oh}}" style="background-image:url('{{item.hpic}}');" bindtap="to_success" data-hno="{{item.hno}}" data-cno="{{item.ocno}}" data-date="{{item.odate}}" data-start="{{item.ostart}}" data-end="{{item.oend}}" data-num="{{item.onum}}" data-total="{{item.ototal}}">
         <view class="card-info-view">
           <view class="card-title-view">
-            HiLight·聚会派对
+            {{item.htitle1}}·{{item.htitle2}}
           </view>
           <view class="card-date-view">
-            2017年12月19日
+            {{item.year}}年{{item.month}}月{{item.day}}日
           </view>
           <view class="card-time-view">
-            6:00AM 至 9:00AM
+            {{item.ostart}} 至 {{item.oend}}AM
+          </view>
+          <view class="card-time-view master-name-view">
+            订单号：{{item.oid}}
           </view>
         </view>
         <view class="card-master-view">
@@ -30,62 +33,11 @@
             组织者
           </view>
           <view class="master-avatar-view">
-            <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="master-image" data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
+            <image src="{{contact.uavatarurl}}" class="master-image" data-src="{{contact.uavatarurl}}" />
           </view>
           <view class="master-name-view">
-            马正一
+            {{contact.unickName}}
           </view>
-
-        </view>
-      </view>
-            <view class="history-card-view">
-        <view class="card-info-view">
-          <view class="card-title-view">
-            HiLight·聚会派对
-          </view>
-          <view class="card-date-view">
-            2017年12月19日
-          </view>
-          <view class="card-time-view">
-            6:00AM 至 9:00AM
-          </view>
-        </view>
-        <view class="card-master-view">
-          <view class="master-title-view">
-            组织者
-          </view>
-          <view class="master-avatar-view">
-            <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="master-image" data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
-          </view>
-          <view class="master-name-view">
-            马正一
-          </view>
-
-        </view>
-      </view>
-            <view class="history-card-view">
-        <view class="card-info-view">
-          <view class="card-title-view">
-            HiLight·聚会派对
-          </view>
-          <view class="card-date-view">
-            2017年12月19日
-          </view>
-          <view class="card-time-view">
-            6:00AM 至 9:00AM
-          </view>
-        </view>
-        <view class="card-master-view">
-          <view class="master-title-view">
-            组织者
-          </view>
-          <view class="master-avatar-view">
-            <image src="https://mina.mapglory.com/static/images/girl1_1.jpeg" class="master-image" data-src="https://mina.mapglory.com/static/images/girl1_1.jpeg" />
-          </view>
-          <view class="master-name-view">
-            马正一
-          </view>
-
         </view>
       </view>
     </view>

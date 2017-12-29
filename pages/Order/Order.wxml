@@ -15,7 +15,7 @@
     <view class="time-select-view">
       <view class="time-title">预定日期*</view>
       <view class="time-select">
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange" class="time-picker">
+        <picker mode="date" value="{{date}}"bindchange="bindDateChange" class="time-picker">
           <view class="picker-inner-view">
             <view class="left-img-view">
               <image src="../../images/icon2.png" class="picker-icon" ></image>
@@ -68,7 +68,7 @@
     <view class="busy-time-view">
        <view class="busy-title">已预订:</view>
        <view class="busy-time-detail">
-          <text class="busy-time-text">8:00-10:00</text>
+          <text class="busy-time-text">{{times_text}}</text>
        </view>
     </view>
     <view class="two-select-view" style="margin-top:50rpx;">
