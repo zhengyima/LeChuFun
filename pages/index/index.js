@@ -99,5 +99,12 @@ Page({
           })
         
     }
-  }
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '乐处Fun',
+      desc: '乐处Fun,乐处无所不在',
+      path: "/pages/index/index"
+    }
+  },
 })

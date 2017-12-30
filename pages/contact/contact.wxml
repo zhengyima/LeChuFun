@@ -91,11 +91,9 @@
     </view>
     <view class="foot-view"></view>
   </scroll-view>
-  <view class="bottom-bar">
-    <view class="xun-view">
-      <text>询</text>
-    </view>
-  </view>
+  <button class="bottom-bar" open-type="contact" session-from="lechufun">
+    询
+  </button>
   <view class="bottom-bar-go">
     <view class="view-btn-2">
       <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">下一步 确认使用条款</button>

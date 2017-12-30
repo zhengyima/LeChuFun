@@ -67,7 +67,7 @@ Page({
     console.log(e.controlId)
   },
   onLoad: function (options) {
-    //app.getUserinfo();
+    app.getUserinfo();
     var hno = options.hno;
     this.setData({ hno: hno });
     var that = this;
@@ -95,5 +95,12 @@ Page({
           }]})
       }
     })
-  }
+  },
+  onShareAppMessage: function () {
+    return {
+      title: this.data.lists.htitle1+"·"+this.data.lists.htitle2,
+      desc: this.data.lists.htitle1 + "·" + this.data.lists.htitle2,
+      path: "/pages/detail/detail?hno="+this.data.hno
+    }
+  },
 })

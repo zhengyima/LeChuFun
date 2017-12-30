@@ -120,7 +120,7 @@
       <view class="room-equip-detail-view">
         <view class="medium-title-view">
           <view class="title-icon-view">
-            <image src="../../images/icon-title.png" class="equip-title-icon"></image>
+            <image src="../../images/video.png" class="equip-title-icon"></image>
           </view>
           <view class="title-text-view">
             <text class="medium-black-text">影音</text>
@@ -139,7 +139,7 @@
       <view class="room-equip-detail-view">
         <view class="medium-title-view">
           <view class="title-icon-view">
-            <image src="../../images/icon-title.png" class="equip-title-icon"></image>
+            <image src="../../images/game.png" class="equip-title-icon"></image>
           </view>
           <view class="title-text-view">
             <text class="medium-black-text">游戏</text>
@@ -157,7 +157,7 @@
       <view class="room-equip-detail-view">
         <view class="medium-title-view">
           <view class="title-icon-view">
-            <image src="../../images/icon-title.png" class="equip-title-icon"></image>
+            <image src="../../images/meal.png" class="equip-title-icon"></image>
           </view>
           <view class="title-text-view">
             <text class="medium-black-text">餐具</text>
@@ -172,14 +172,30 @@
           </view>
         </view>
       </view>      
+      <view class="room-equip-detail-view">
+        <view class="medium-title-view">
+          <view class="title-icon-view">
+            <image src="../../images/meal.png" class="equip-title-icon"></image>
+          </view>
+          <view class="title-text-view">
+            <text class="medium-black-text">厨具</text>
+          </view>
+        </view>
+        <view class="room-equip-icon-view">
+          <view class="room-equip-icon" wx:for="{{lists.equip.chief}}">
+            <view class="room-equip-icon-img">
+              <image src="{{item.eurl}}" class="equip-icon"></image>
+            </view>
+            <view class="room-equip-icon-text"><text class="icon-text">{{item.ename}}</text></view>
+          </view>
+        </view>
+      </view>   
     </view>
     <view class="foot-view"></view>
   </view>
-  <view class="bottom-bar">
-    <view class="xun-view">
-      <text>询</text>
-    </view>
-  </view>
+   <button class="bottom-bar" open-type="contact" session-from="lechufun">
+    询
+  </button>
   <view class="bottom-bar-go">
     <view class="view-btn-2">
       <button class="yueta" data-hno="{{lists.hno}}" bindtap="order_func">立即预约</button>

@@ -32,6 +32,7 @@
 .swiper-view{
   height:52%;
   margin-bottom:70rpx;
+  width:100%;
 }
 .myswiper{
   height:88%;
@@ -54,14 +55,14 @@
 .info-view{
   display:flex;
   height:22%;
-  width:100%;
+  width:96%;
   padding-left:30rpx;
   position:absolute;
   top:40%;
 }
 .text-info-view{
   height:100%;
-  width:65%;
+  width:66%;
 }
 .price-info-view{
   width:35%;
@@ -157,17 +158,17 @@
 }
 .label-icon-view{
   height:160rpx;
-  width:100%;
+  width:90%;
   margin-top:30rpx;
   margin-left:30rpx;
   margin-right:40rpx;
   display:flex;
 }
 .label-icon{
-  width:16%;
+  width:22%;
   height:100%;
-  padding-left:10rpx;
-  padding-right:10rpx;
+  margin-left:20rpx;
+  margin-right:25rpx;
 }
 .label-icon-image{
   height:50%;
@@ -193,7 +194,7 @@
   margin-top:40rpx;
 }
 .address-detail-view{
-  margin-top:20rpx;
+  margin-top:35rpx;
 }
 .map-view{
   margin-top:40rpx;
@@ -222,9 +223,10 @@
 }
 
 .room-equip-view{
-  padding-left:30rpx;
-  padding-right:30rpx;
+  margin-left:3%;
+  margin-right:3%;
   margin-top:40rpx;
+  width:94%;
 }
 .room-equip-detail-view{
   margin-top:20rpx;
@@ -251,9 +253,9 @@
   font-weight:500;
 }
 .room-equip-icon-view{
-  width:100%;
-  padding-left:20rpx;
-  padding-right:20rpx;
+  width:96%;
+  margin-left:2%;
+  margin-right:2%;
   margin-top:40rpx;
   display:flex;
   flex-flow: row wrap;
@@ -279,18 +281,16 @@
 
 .bottom-bar{
   position:fixed;
-  top:81%;
-  left:84%;
-  width:55px;
+  top:75%;
+  left:78%;
+  width:73px;
   height:50px;
-  display:flex;
+   display: table;
   background-color:#b69a72;
   border-radius: 100%;
-  justify-content: center;
   color:white;
-  font-size:33px;
+  font-size:30px;
   font-weight:300;
-  padding-top:18rpx;
 }
 .bottom-bar-go{
   position:fixed;

@@ -113,3 +113,17 @@
   font-weight:300;
   padding-top:18rpx;
 }
+
+.bottom-bar{
+  position:fixed;
+  top:75%;
+  left:78%;
+  width:73px;
+  height:60px;
+  display: table;
+  background-color:#b69a72;
+  border-radius: 100%;
+  color:white;
+  font-size:30px;
+  font-weight:300;
+}

@@ -42,7 +42,7 @@
       </view>
     </view>
     <view class="now-view" wx:if="{{type == 0}}">
-      <view class="now-card" wx:if="{{have != 0}}">
+      <view class="now-card" wx:if="{{have != 0}}" data-hno="{{latest.hno}}" data-cno="{{latest.ocno}}" data-date="{{latest.odate}}" data-start="{{latest.ostart}}" data-end="{{latest.oend}}" data-num="{{latest.onum}}" data-total="{{latest.ototal}}" bindtap="to_success">
         <view class="now-my-view">
           <view class="now-avatar-view">
             <image class="master-image" src="{{contact.uavatarurl}}" class="master-image" data-src="{{contact.uavatarurl}}" />

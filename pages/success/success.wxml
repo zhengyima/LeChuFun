@@ -7,10 +7,10 @@
       </view>
       <view class="success-text-view">
         <view class="success-text-title-view">
-          <text class="title-text">好处空间预约成功！</text>
+          <text class="title-text">乐处Fun空间预约成功！</text>
         </view>
         <view class="success-text-text-view">
-          <text class="detail-text">感谢您选择了玩处！
+          <text class="detail-text">感谢您选择了乐处Fun！
           我们的工作人员会尽快与您联系，请注意电话或者微信哦</text>
         </view>
       </view>
@@ -74,11 +74,9 @@
 
     <view class="foot-view"></view>
   </view>
-  <view class="bottom-bar">
-    <view class="xun-view">
-      <text>询</text>
-    </view>
-  </view>
+  <button class="bottom-bar" open-type="contact" session-from="lechufun">
+    询
+  </button>
   <view class="bottom-bar-go">
     <view class="view-btn-2">
       <button class="yueta" data-sno="{{list.sno}}" bindtap="order_func">确认</button>

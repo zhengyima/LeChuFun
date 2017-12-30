@@ -73,7 +73,7 @@ Page({
     //pagenum += "fapiao=" + that.data.fapiao + "&";
     pagenum += "cno=" + e.currentTarget.dataset.cno + "&";
     pagenum += "price_total=" + e.currentTarget.dataset.total + "&";
-    wx.redirectTo({
+    wx.navigateTo({
       url: "../res_detail/res_detail?" + pagenum
     })
   }
