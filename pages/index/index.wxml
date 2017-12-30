@@ -1,6 +1,20 @@
 <!--index.wxml-->
 <view class="container mycontainer">
   <scroll-view scroll-y="true" class="my-scroll">
+     <view class="navi-view">
+      <navigator url="/pages/index/index?type=0" open-type="reLaunch" class="tab-list-1" wx:if="{{type == 0}}">推荐           
+      </navigator>
+      <navigator url="/pages/index/index?type=0" open-type="reLaunch" class="tab-list-2" wx:if="{{type != 0}}">推荐
+      </navigator>
+      <navigator url="/pages/index/index?type=1" open-type="reLaunch" class="tab-list-0" wx:if="{{type != 1}}"> 按距离排序
+      </navigator>
+      <navigator url="/pages/index/index?type=1" open-type="reLaunch" class="tab-list-3" wx:if="{{type == 1}}">按距离排序
+      </navigator>
+      <navigator url="/pages/index/index?type=2" open-type="reLaunch" class="tab-list-0" wx:if="{{type != 2}}"> 按价格排序
+      </navigator>
+      <navigator url="/pages/index/index?type=2" open-type="reLaunch" class="tab-list-3" wx:if="{{type == 2}}">按价格排序
+      </navigator>
+    </view>
     <view class="room-view" bindtap="to_detail" wx:for="{{lists}}" data-hno="{{item.hno}}">
       <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff" circular="true" class="myswiper">
@@ -14,6 +28,9 @@
             <text class="name-text">{{item.htitle1}}·{{item.htitle2}}</text>
           </view>
           <view class="label-view">
+           <view class="label" wx:if="{{location_flag==1}}">
+              <text class="label-text">{{item.distance}}{{item.danwei}}</text>
+            </view>
             <view class="label" wx:for="{{item.labels}}">
               <text class="label-text">{{item.lname}}</text>
             </view>
@@ -32,9 +49,13 @@
     </view>
     <view class="foot-view"></view>
   </scroll-view>
-  <view class="bottom-bar">
+  <!--view class="bottom-bar">
     <view class="xun-view">
       <text>询</text>
+     
     </view>
-  </view>
+  </view-->
+  <button class="bottom-bar" open-type="contact" session-from="lechufun">
+    询
+  </button>
 </view>

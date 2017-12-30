@@ -54,7 +54,9 @@ Page({
         console.log(res);
         //var lists = res.data;
         //console.log(lists);
-        that.setData({ oh: res.data[0],contact:res.data[1][0] })
+        that.setData({ have: res.data[2].length })
+        that.setData({ oh: res.data[0],contact:res.data[1][0],latest:res.data[2][0] })
+
       }
     })
   },

@@ -121,3 +121,64 @@
   font-size:12px;
   font-weight:300;
 }
+
+
+
+/* 以下是目前的预约部分  */
+.now-view
+{
+  width:92%;
+  height:1300rpx;
+  background-color:#e5e5e5;
+  padding-top:20rpx;
+  padding-left:4%;
+  padding-right:4%;
+}
+
+.now-card{
+  background-color: #ffffff;
+  height:800rpx;
+  width:92%;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #d4d4d4 ;
+  padding: 40rpx 4%;
+}
+.now-my-view{
+  width:92%;
+  display:flex;
+}
+.now-my-title{
+  font-size:30rpx;
+  font-weight:600;
+}
+.now-my-name{
+  font-size:35rpx;
+  font-weight:600;
+  color:#887254;
+}
+.now-img-view{
+  width:100%;
+  height:400rpx;
+
+  margin-top:40rpx;
+}
+.now-img{
+  width:100%;
+  height:100%;
+}
+.now-info-view{
+  margin-top:40rpx;
+}
+.now-name-view{
+  font-size:40rpx;
+  font-weight:600;
+  color:#887254;
+  
+}
+.now-date-time-view{
+  margin-top:40rpx;
+  font-size:25rpx;
+}
+.now-addr-view{
+  font-size:25rpx;
+  margin-top:15rpx;
+}

@@ -41,5 +41,54 @@
         </view>
       </view>
     </view>
+    <view class="now-view" wx:if="{{type == 0}}">
+      <view class="now-card" wx:if="{{have != 0}}">
+        <view class="now-my-view">
+          <view class="now-avatar-view">
+            <image class="master-image" src="{{contact.uavatarurl}}" class="master-image" data-src="{{contact.uavatarurl}}" />
+          </view>
+          <view class="now-my-text-view">
+            <view class="now-my-title">组织者</view>
+            <view class="now-my-name">{{contact.unickName}}</view>
+          </view>
+        </view>
+
+        <view class="now-img-view">
+          <image src="{{latest.hpic}}" class="now-img" data-src="{{latest.hpic}}" />
+        </view>
+
+        <view class="now-info-view">
+          <view class="now-info-title-view">
+            <view class="now-name-view">{{latest.htitle1}}·{{latest.htitle2}}</view>
+          </view>
+          <view class="now-date-time-view">{{latest.year}}年{{latest.month}}月{{latest.day}}日 {{latest.ostart}}  - {{latest.oend}} </view>
+          <view class="now-addr-view">
+            {{latest.haddress}}
+          </view> 
+        </view>
+      </view>
+      <view class="now-card" wx:if="{{have == 0}}">
+        <view class="now-my-view">
+          <view class="now-avatar-view">
+            <image class="master-image" src="{{contact.uavatarurl}}" class="master-image" data-src="{{contact.uavatarurl}}" />
+          </view>
+          <view class="now-my-text-view">
+            <view class="now-my-title">欢迎回来！</view>
+            <view class="now-my-name">{{contact.unickName}}</view>
+          </view>
+        </view>
+
+        <view class="now-img-view">
+          <image src="https://mina.mapglory.com/static/images/girl1_2.jpeg" class="now-img" data-src="https://mina.mapglory.com/static/images/girl1_2.jpeg" />
+        </view>
+
+        <view class="now-info-view">
+          <view class="now-info-title-view">
+            <view class="now-name-view">暂无预约，快去约个地方吧~</view>
+          </view>
+          <view class="now-date-time-view">by 乐处Fun团队</view>
+        </view>
+      </view>
+    </view>
   </scroll-view>
 </view>

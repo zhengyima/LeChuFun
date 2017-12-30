@@ -26,22 +26,78 @@ Page({
   },
   onLoad: function (options) {
     app.getUserinfo();
+    if(options.type != undefined){
+      this.setData({ type: options.type });
+    }
+    if(this.data.type==undefined){
+      this.setData({type:0});
+    }
     console.log("asd");
     var that = this;
-    wx.request({
-      url: config.host + '/index',
-      data: {},
-      method: 'GET',
-      header: {
-        'Authorization': "JWT ",
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      success: function (res) {
-        console.log(res);
-        var lists = res.data;
-        console.log(lists);
-        that.setData({ lists: lists })
-      }
-    })
+    var latitude = wx.getStorageSync('latitude')
+    var longitude = wx.getStorageSync('longitude')
+    var speed = wx.getStorageSync('speed')
+    var accuracy = wx.getStorageSync('accuracy')
+    this.setData({ location_flag: true })
+    console.log(latitude)
+    if(latitude == undefined || longitude == undefined || latitude == "" || longitude == ""){
+      this.setData({location_flag:false})
+    }
+    if(this.data.type==2){   
+    console.log({ latitude: latitude, longitude: longitude });
+          wx.request({
+            url: config.host + '/index_price',
+            data: { latitude: latitude, longitude: longitude, speed: speed, accuracy: accuracy, openid: wx.getStorageSync('openid') },
+            method: 'GET',
+            header: {
+              'Authorization': "JWT ",
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            success: function (res) {
+              console.log(res);
+              var lists = res.data;
+              console.log(lists);
+              that.setData({ lists: lists })
+            }
+          })
+        
+    }
+    else if(this.data.type==1){
+          wx.request({
+            url: config.host + '/index_location',
+            data: { latitude: latitude, longitude: longitude, speed: speed, accuracy: accuracy, openid: wx.getStorageSync('openid') },
+            method: 'GET',
+            header: {
+              'Authorization': "JWT ",
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            success: function (res) {
+              console.log(res);
+              var lists = res.data;
+              console.log(lists);
+              that.setData({ lists: lists })
+            }
+          })
+    }
+    else{
+      console.log("test")
+      console.log({ latitude: latitude, longitude: longitude });
+          wx.request({
+            url: config.host + '/index',
+            data: { latitude: latitude, longitude: longitude, speed: speed, accuracy: accuracy, openid: wx.getStorageSync('openid') },
+            method: 'GET',
+            header: {
+              'Authorization': "JWT ",
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            success: function (res) {
+              console.log(res);
+              var lists = res.data;
+              console.log(lists);
+              that.setData({ lists: lists })
+            }
+          })
+        
+    }
   }
 })
