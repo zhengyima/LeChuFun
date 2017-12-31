@@ -32,6 +32,9 @@
           <view class="old-price-view">
             <text class="old-text">原价￥{{lists.hprice_old}}</text>
           </view>
+          <view class="old-price-view">
+            <text class="square-text">场地面积{{lists.hsquare}}平米</text>
+          </view>
         </view>
       </view>
     </view>
@@ -94,7 +97,7 @@
       </view>
 
       <view class="map-view">
-<map id="map" longitude="{{lists.hlongitude}}" latitude="{{lists.hlatitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" style="width:100%;height:500rpx;" show-location></map>
+<map id="map" longitude="{{lists.hlongitude}}" latitude="{{lists.hlatitude}}" scale="14" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" style="width:100%;height:500rpx;" show-location></map>
        
       </view>
     </view>

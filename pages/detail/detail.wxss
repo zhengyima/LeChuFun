@@ -138,6 +138,11 @@
   font-size:30rpx;
   text-decoration: line-through;
 }
+.square-text{
+  font-weight:300;
+  color:#707070;
+  font-size:25rpx;
+}
 
 .about-view{
   padding-left:30rpx;

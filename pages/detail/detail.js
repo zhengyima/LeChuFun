@@ -16,7 +16,7 @@ Page({
     interval: 5000,
     duration: 1000,
     markers: [{
-      iconPath: "../../images/logo.jpg",
+      iconPath: "../../images/logo.jpeg",
       id: 0,
       latitude: 23.099994,
       longitude: 113.324520,
@@ -35,17 +35,6 @@ Page({
       width: 2,
       dottedLine: true
     }],
-    controls: [{
-      id: 1,
-      iconPath: '../../images/logo.jpg',
-      position: {
-        left: 0,
-        top: 300 - 50,
-        width: 50,
-        height: 50
-      },
-      clickable: true
-    }]
   },
   to_detail:function(){
     wx.navigateTo({
@@ -86,7 +75,7 @@ Page({
         that.setData({ lists: lists });
         that.setData({
           markers: [{
-            iconPath: "../../images/logo.jpg",
+            iconPath: "../../images/logo.jpeg",
             id: 0,
             latitude: lists.hlatitude,
             longitude: lists.hlongitude,

@@ -97,11 +97,11 @@
   padding-left:15rpx;
 }
 .text-view{
-  width:70%;
+  width:68%;
   height:100%;
 }
 .price-view{
-  width:30%;
+  width:32%;
   height:100%;
 }
 .name-view{
