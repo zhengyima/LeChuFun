@@ -171,6 +171,7 @@ Page({
         },
         success: function (res) {
           console.log(res);
+          var oid = res.data.order_id
           //var lists = res.data[0];
           //console.log(lists);
           if(res.data.my_status == 1 ){
@@ -183,6 +184,19 @@ Page({
               'success': function (res) {
                 console.log("rp success");
                 console.log(res);
+
+                wx.request({
+                  url: config.host + '/mail',
+                  data: {oid:oid},
+                  method: 'GET',
+                  header: {
+                    'Authorization': "JWT ",
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                  },
+                  success: function (res) {
+                    console.log(res);
+                  }
+                });
                 wx.showToast({
                   title: '成功，3秒后跳转',
                   icon: 'success',
@@ -214,9 +228,7 @@ Page({
           }
 
         }
-      })
-      
-      
+      }) 
     }
     else{
       wx.showToast({
