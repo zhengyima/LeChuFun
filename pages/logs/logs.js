@@ -11,5 +11,17 @@ Page({
         return util.formatTime(new Date(log))
       })
     })
+    wx.request({
+      url: 'https://mina.mapglory.com/getqrcode',
+      data: {},
+      method: 'GET',
+      header: {
+        'Authorization': "JWT ",
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      success: function (res) {
+        console.log(res);
+      }
+    })
   }
 })

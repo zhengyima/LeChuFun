@@ -57,8 +57,13 @@ Page({
   },
   onLoad: function (options) {
     app.getUserinfo();
-    var hno = options.hno;
-    this.setData({ hno: hno });
+    this.setData({ hno: options.hno });
+    if(options.scene != undefined){
+      var scene = decodeURIComponent(options.scene)
+      this.setData({ hno: parseInt(scene) });
+    }
+    var hno = this.data.hno;
+    console.log(options.scene);
     var that = this;
     wx.request({
       url: config.host + '/detail',

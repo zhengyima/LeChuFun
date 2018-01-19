@@ -102,8 +102,8 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '搜罗北京高性价比活动地点，让您活动不用愁',
-      desc: '乐处Fun,乐处无所不在',
+      title: '活动找场地每小时至少便宜10元！',
+      desc: '搜罗北京高性价比活动地点，让您活动不用愁',
       path: "/pages/index/index"
     }
   },

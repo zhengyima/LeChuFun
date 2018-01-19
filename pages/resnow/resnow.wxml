@@ -12,7 +12,30 @@
       </navigator>
     </view>
     <view class="white-view"></view>
+    
     <view class="history-view" wx:if="{{type == 1}}">
+      <view class="now-card" wx:if="{{oh.length==0}}" style="width:86%;">
+        <view class="now-my-view">
+          <view class="now-avatar-view">
+            <image class="master-image" src="{{contact.uavatarurl}}" class="master-image" data-src="{{contact.uavatarurl}}" />
+          </view>
+          <view class="now-my-text-view">
+            <view class="now-my-title">欢迎回来！</view>
+            <view class="now-my-name">{{contact.unickName}}</view>
+          </view>
+        </view>
+
+        <view class="now-img-view">
+          <image src="https://mina.mapglory.com/static/images/logo.jpeg" class="now-img" data-src="https://mina.mapglory.com/static/images/girl1_2.jpeg" />
+        </view>
+
+        <view class="now-info-view">
+          <view class="now-info-title-view">
+            <view class="now-name-view">暂无历史预约记录，去约个地方吧~</view>
+          </view>
+          <view class="now-date-time-view">by 乐处Fun团队</view>
+        </view>
+      </view>
       <view class="history-card-view" wx:for="{{oh}}" style="background-image:url('{{item.hpic}}');" bindtap="to_success" data-hno="{{item.hno}}" data-cno="{{item.ocno}}" data-date="{{item.odate}}" data-start="{{item.ostart}}" data-end="{{item.oend}}" data-num="{{item.onum}}" data-total="{{item.ototal}}">
         <view class="card-info-view">
           <view class="card-title-view">
@@ -79,7 +102,7 @@
         </view>
 
         <view class="now-img-view">
-          <image src="https://mina.mapglory.com/static/images/girl1_2.jpeg" class="now-img" data-src="https://mina.mapglory.com/static/images/girl1_2.jpeg" />
+          <image src="https://mina.mapglory.com/static/images/logo.jpeg" class="now-img" data-src="https://mina.mapglory.com/static/images/girl1_2.jpeg" />
         </view>
 
         <view class="now-info-view">

@@ -62,7 +62,13 @@ Page({
     equips: [
       { name: '0', value: '不需要', checked: 'true' },
       { name: '1', value: 'XBOX(ONE)' },
-    ]
+    ],
+    need1:true,
+    need2:true,
+    need3:true,
+    need4:true,
+    need5:true,
+    need6:true
   },
   to_detail: function () {
     wx.navigateTo({

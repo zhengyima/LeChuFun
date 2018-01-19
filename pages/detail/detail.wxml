@@ -88,6 +88,18 @@
         </view>
       </view-->
     </view>
+    <!--view class="about-view">
+      <view class="about-title-view">
+        <text class="large-title">价格说明</text>
+      </view>
+      <view class="about-detail-view">
+        <text class="detail-text">{{lists.hdetail}} </text>
+      </view>
+    </view-->
+    
+
+    
+    
     <view class="address-view">
       <view class="address-title-view">
         <text class="large-title">空间地址</text>

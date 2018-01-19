@@ -18,7 +18,7 @@
         <picker mode="date" value="{{date}}"bindchange="bindDateChange" class="time-picker">
           <view class="picker-inner-view">
             <view class="left-img-view">
-              <image src="../../images/icon2.png" class="picker-icon" ></image>
+              <image src="../../images/date.png" class="picker-icon" ></image>
             </view>
             <view class="picker">
               <text class="holder">{{date_holder}}</text> {{date}}
@@ -35,7 +35,7 @@
           <picker mode="time" value="{{time1}}"bindchange="bindTimeChange1" class="time-picker">
             <view class="picker-inner-view">
               <view class="left-img-view">
-                <image src="../../images/icon2.png" class="picker-icon" ></image>
+                <image src="../../images/start.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
                 <text class="holder">{{time_holder_start}}</text> {{timestart}}
@@ -51,7 +51,7 @@
           <picker mode="time" value="{{time2}}" bindchange="bindTimeChange2" class="time-picker">
             <view class="picker-inner-view">
               <view class="left-img-view">
-                <image src="../../images/icon2.png" class="picker-icon" ></image>
+                <image src="../../images/end.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
                 <text class="holder">{{time_holder_end}}</text> {{timeend}}
@@ -79,7 +79,7 @@
           <picker mode="selector" value="{{type_index}}" range="{{types}}" bindchange="bindtypeChange" class="time-picker">
             <view class="picker-inner-view">
               <view class="left-img-view">
-                <image src="../../images/icon2.png" class="picker-icon" ></image>
+                <image src="../../images/type.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
                  <text class="holder">{{type_holder}}</text>{{types[type_index]}}
@@ -96,7 +96,7 @@
           <picker mode="selector" value="{{num_index}}" range="{{nums}}" bindchange="bindnumChange" class="time-picker">
             <view class="picker-inner-view">
               <view class="left-img-view">
-                <image src="../../images/icon2.png" class="picker-icon" ></image>
+                <image src="../../images/num.png" class="picker-icon" ></image>
               </view>
               <view class="half-picker">
                 <text class="holder">{{num_holder}}</text>{{nums[num_index]}}
