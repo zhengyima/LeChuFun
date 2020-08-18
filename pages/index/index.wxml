@@ -21,6 +21,7 @@
         <swiper-item class="my-swiper-item" wx:for="{{item.images}}">
             <image src="{{item.purl}}" class="room-image"   bindlongpress='image_longPress' data-src="{{item.purl}}" />
         </swiper-item>
+       
       </swiper>
       <view class="info-view">
         <view class="text-view">
@@ -55,7 +56,7 @@
      
     </view>
   </view-->
-  <button class="bottom-bar" open-type="contact" session-from="lechufun">
-    询
+  <button class="bottom-bar" open-type="getUserInfo" session-from="lechufun" bindtap="to_login" >
+    登
   </button>
 </view>

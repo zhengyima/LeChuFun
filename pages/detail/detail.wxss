@@ -147,7 +147,7 @@
 .about-view{
   padding-left:30rpx;
   padding-right:30rpx;
-  margin-top:0rpx;
+  margin-top:150rpx;
 }
 .about-detail-view{
   margin-top:20rpx;

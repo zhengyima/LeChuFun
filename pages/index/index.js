@@ -12,7 +12,6 @@ Page({
       'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493698928333&di=ae56672831512cc7d4cd1e26d31269aa&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160412%2F9-160412091540.jpg'
     ],
     indicatorDots: true,
-
     autoplay: false,
     interval: 5000,
     duration: 1000
@@ -25,7 +24,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    app.getUserinfo();
+    
     if(options.type != undefined){
       this.setData({ type: options.type });
     }
@@ -46,7 +45,7 @@ Page({
     if(this.data.type==2){   
     console.log({ latitude: latitude, longitude: longitude });
           wx.request({
-            url: config.host + '/index_price',
+            url: config.host + '/index',
             data: { latitude: latitude, longitude: longitude, speed: speed, accuracy: accuracy, openid: wx.getStorageSync('openid') },
             method: 'GET',
             header: {
@@ -64,7 +63,7 @@ Page({
     }
     else if(this.data.type==1){
           wx.request({
-            url: config.host + '/index_location',
+            url: config.host + '/index',
             data: { latitude: latitude, longitude: longitude, speed: speed, accuracy: accuracy, openid: wx.getStorageSync('openid') },
             method: 'GET',
             header: {
@@ -107,4 +106,8 @@ Page({
       path: "/pages/index/index"
     }
   },
+
+  to_login:function(){
+    app.getUserinfo();
+  }
 })

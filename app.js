@@ -13,13 +13,15 @@ App({
     userInfo: null
   },
   getUserinfo: function () {
+    console.log("start getuserinfo")
     wx.login({
       success: loginres => {
         console.log("login success in!");
-        //console.log(res)
+        console.log(loginres)
         wx.getUserInfo({
           success: res => {
             console.log("getuserinfo success in!");
+            console.log(res)
             console.log({
               code: loginres.code,
               iv: res.iv,
@@ -28,10 +30,11 @@ App({
               rawData: res.rawData,
             });
             //console.log(loginres)
-            //console.log(res)
+            console.log(res)
             // 可以将 res 发送给后台解码出 unionId
             this.globalData.userInfo = res.userInfo
-            if (loginres.code) {
+            console.log(loginres)
+            if (loginres) {
               console.log("getuserinfo success in!");
               wx.request({
                 url: config.host + '/login',
